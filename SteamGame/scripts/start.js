@@ -13,7 +13,7 @@ steamGame.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.A
 steamGame.game.state.add('Boot', steamGame.Boot);
 //since the rest don't exist yet, I'm keeping them out
 steamGame.game.state.add('Preload', steamGame.Preload);
-//steamGame.game.state.add('MainMenu', steamGame.MainMenu);
+steamGame.game.state.add('MainMenu', steamGame.MainMenu);
 //steamGame.game.state.add('Game', steamGame.Game);
 
 //running the first state in the sequence
