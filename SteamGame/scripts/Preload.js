@@ -19,10 +19,9 @@ steamGame.Preload.prototype = {
         this.load.setPreloadSprite(this.preloadBar, 0);
 
         //load actual sprites and spritesheets (placeholder stock images for now)
-        this.load.atlasJSONHash('menuBack', 'sprites/images/blimp.png', 'sprites/images/blimp.json');
-            this.load.image('sky', 'sprites/images/blue.png');
-        this.load.image('petal', 'sprites/images/petal.jpg');
-            this.load.image('seahorse', 'sprites/images/seahorse.jpg');
+        this.load.atlasJSONHash('menuBlimp', 'sprites/images/blimp.png', 'sprites/images/blimp.json');
+            this.load.atlasJSONHash('menuBall1', 'sprites/images/hotairballoon.png', 'sprites/images/hotairballoon.json');
+        this.load.atlasJSONHash('title', 'sprites/load/Title.png', 'sprites/load/Title.json');
         this.load.image('butterfly', 'sprites/images/butterfly.jpg');
     },
     create: function() {
