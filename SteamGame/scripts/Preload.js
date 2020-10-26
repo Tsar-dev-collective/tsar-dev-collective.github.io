@@ -20,7 +20,7 @@ steamGame.Preload.prototype = {
 
         //load actual sprites and spritesheets (placeholder stock images for now)
         this.load.atlasJSONHash('menuBack', 'sprites/images/blimp.png', 'sprites/images/blimp.json');
-            this.load.image('road', 'sprites/images/road.jpg');
+            this.load.image('sky', 'sprites/images/blue.png');
         this.load.image('petal', 'sprites/images/petal.jpg');
             this.load.image('seahorse', 'sprites/images/seahorse.jpg');
         this.load.image('butterfly', 'sprites/images/butterfly.jpg');
