@@ -4,7 +4,7 @@ steamGame.MainMenu.prototype = {
     create: function() {
         this.game.stage.backgroundColor = '#75a1a0';
 
-        this.backBlimp = this.game.add.sprite(this.game.world.centerX + 192, this.game.world.centerY - 146, 'menuBlimp');
+        this.backBlimp = this.game.add.sprite(this.game.world.centerX + 192, (this.game.world.centerY / 2), 'menuBlimp');
         this.backBlimp.anchor.setTo(0, 0.5);
         this.backBlimp.scale.setTo(0.5, 0.5);
         this.backBlimp.animations.add('float');
