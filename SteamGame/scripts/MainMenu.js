@@ -10,6 +10,12 @@ steamGame.MainMenu.prototype = {
         this.backBlimp.animations.add('float');
         this.backBlimp.animations.play('float', 8, true);
 
+        this.backBall2 = this.game.add.sprite(75, this.game.world.height, 'menuBall2');
+        this.backBall2.anchor.setTo(0, 1);
+        this.backBall2.scale.setTo(0.2, 0.2);
+        this.backBall2.animations.add('float');
+        this.backBall2.animations.play('float', 6, true);
+
         this.backBall1 = this.game.add.sprite(100, this.game.world.height, 'menuBall1');
         this.backBall1.anchor.setTo(0, 1);
         this.backBall1.scale.setTo(0.3, 0.3);
@@ -39,5 +45,7 @@ steamGame.MainMenu.prototype = {
             this.titlePart10.frame = 10;
         this.titlePart11 = this.game.add.sprite(this.titlePart10.x + this.titlePart8.width - 24, this.titlePart3.y + this.titlePart3.height, 'title');
             this.titlePart11.frame = 11;
+
+        
     }
 }
