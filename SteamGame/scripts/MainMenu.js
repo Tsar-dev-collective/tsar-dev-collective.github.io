@@ -13,7 +13,7 @@ steamGame.MainMenu.prototype = {
         this.backBlimp.animations.add('float');
         this.backBlimp.animations.play('float', 8, true);
 
-        this.backBall2 = this.game.add.sprite(75, this.game.world.height, 'menuBall2');
+        this.backBall2 = this.game.add.sprite(155, this.game.world.height, 'menuBall2');
         this.backBall2.anchor.setTo(0, 0.95);
         this.backBall2.scale.setTo(0.2, 0.2);
         this.backBall2.animations.add('float');
@@ -34,7 +34,7 @@ steamGame.MainMenu.prototype = {
             this['cloud' + i.toString()].anchor.setTo(1.1, 0.1);
         }
 
-        this.backBall1 = this.game.add.sprite(100, this.game.world.height, 'menuBall1');
+        this.backBall1 = this.game.add.sprite(180, this.game.world.height, 'menuBall1');
         this.backBall1.anchor.setTo(0, 0.95);
         this.backBall1.scale.setTo(0.3, 0.3);
         this.backBall1.animations.add('float', [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
