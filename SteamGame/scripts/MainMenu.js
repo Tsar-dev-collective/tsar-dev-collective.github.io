@@ -68,9 +68,9 @@ steamGame.MainMenu.prototype = {
         if(this.game.input.activePointer.justPressed() && this.starting == false) {
           //this.game.state.start('Saves');
           this.starting = true;
-          this.backBlimp.animations.pause('float');
+          /*this.backBlimp.animations.pause('float');
           this.backBall1.animations.pause('float');
-          this.backBall2.animations.pause('float');
+          this.backBall2.animations.pause('float');*/
         }
 
         if (this.starting != true) {
@@ -79,7 +79,7 @@ steamGame.MainMenu.prototype = {
             } else {
                 var sprites = [0, 1, 2, 3, 4, 5, 6];
                 function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
-                this['cloud0'].x = this.game.world.width + 128 + (Math.floor(Math.random() * 800));
+                this['cloud0'].x = this.game.world.width + 200 + (Math.floor(Math.random() * 800));
                 this['cloud0'].y = Math.floor(Math.random() * (this.game.world.height - 100));
                 this['cloud0'].frame =  spriteAry();
             }
@@ -88,7 +88,7 @@ steamGame.MainMenu.prototype = {
             } else {
                 var sprites = [0, 1, 2, 3, 4, 5, 6];
                 function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
-                this['cloud1'].x = this.game.world.width + 128 + (Math.floor(Math.random() * 800));
+                this['cloud1'].x = this.game.world.width + 200 + (Math.floor(Math.random() * 800));
                 this['cloud1'].y = Math.floor(Math.random() * (this.game.world.height - 100));
                 this['cloud1'].frame =  spriteAry();
             }
@@ -97,9 +97,26 @@ steamGame.MainMenu.prototype = {
             } else {
                 var sprites = [0, 1, 2, 3, 4, 5, 6];
                 function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
-                this['cloud2'].x = this.game.world.width + 128 + (Math.floor(Math.random() * 800));
+                this['cloud2'].x = this.game.world.width + 200 + (Math.floor(Math.random() * 800));
                 this['cloud2'].y = Math.floor(Math.random() * (this.game.world.height - 100));
                 this['cloud2'].frame =  spriteAry();
+            }
+        }
+        if (this.starting == true) {
+            if(this['cloud0'].x > 0) {
+                this['cloud0'].x -= 1;
+            } else {
+                this['cloud0'].destroy();
+            }
+            if(this['cloud1'].x > 0) {
+                this['cloud1'].x -= 1;
+            } else {
+                this['cloud1'].destroy();
+            }
+            if(this['cloud2'].x > 0) {
+                this['cloud2'].x -= 1;
+            } else {
+                this['cloud2'].destroy();
             }
         }
     }
