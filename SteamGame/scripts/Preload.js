@@ -25,6 +25,7 @@ steamGame.Preload.prototype = {
             this.load.atlasJSONHash('menuBall2', 'sprites/images/hotairballoon2.png', 'sprites/images/hotairballoon2.json');
         this.load.atlasJSONHash('clouds', 'sprites/images/clouds.png', 'sprites/images/clouds.json');
             this.load.image('plaque', 'maps/menuMapping.png');
+        this.load.atlasJSONHash('menuBG', 'sprites/images/titleWarden.png', 'sprites/images/titleWarden.json');
     },
     create: function() {
         this.state.start('MainMenu');
