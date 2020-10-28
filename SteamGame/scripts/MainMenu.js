@@ -64,11 +64,11 @@ steamGame.MainMenu.prototype = {
         this.titlePart11 = this.game.add.sprite(this.titlePart10.x + this.titlePart8.width - 24, this.titlePart3.y + this.titlePart3.height, 'title');
             this.titlePart11.frame = 11;
 
-        this.menuBack = this.game.add.sprite(this.game.world.centerX, this.game.world.height * 1.5, 'plaque');
-        this.menuBack.anchor.setTo(0.5, 0.5);
+        this.menuBack = this.game.add.sprite(this.game.world.centerX, this.backBall1.y, 'plaque');
+        this.menuBack.anchor.setTo(0.5, 0);
         this.menuBack.scale.setTo(0.87, 0.8);
 
-        this.menuBGround1 = this.game.add.sprite(0, this.game.world.height * 2, 'menuBG');
+        this.menuBGround1 = this.game.add.sprite(-2, this.game.world.height * 2, 'menuBG');
         this.menuBGround1.anchor.setTo(0, 1);
         this.menuBGround1.scale.setTo(1.5, 1.5);
         this.menuBGround1.animations.add('zap', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 0]);
@@ -141,7 +141,7 @@ steamGame.MainMenu.prototype = {
             } else {
                 this.backBlimp.destroy();
             }
-            if(this.menuBack.y > this.game.world.height / 2) {
+            if(this.menuBack.y + (this.menuBack.height / 2) > this.game.world.height / 2) {
                 this.backBall1.y -= 1.5;
                 this.backBall2.y -= 1.5;
                 this.menuBack.y -= 1.5;
