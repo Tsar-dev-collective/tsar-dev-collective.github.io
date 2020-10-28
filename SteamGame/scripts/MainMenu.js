@@ -2,6 +2,7 @@ steamGame.MainMenu = function() {};
 
 steamGame.MainMenu.prototype = {
     create: function() {
+        this.starting = false;
         this.game.stage.backgroundColor = '#75a1a0';
 
         this.backBlimp = this.game.add.sprite(this.game.world.centerX + 192, (this.game.world.centerY / 2), 'menuBlimp');
@@ -64,35 +65,42 @@ steamGame.MainMenu.prototype = {
     },
 
     update: function() {
-        /*if(this.game.input.activePointer.justPressed()) {
-          this.game.state.start('Game');
-        }*/
-        if(this['cloud0'].x > 0) {
-            this['cloud0'].x -= 1;
-        } else {
-            var sprites = [0, 1, 2, 3, 4, 5, 6];
-            function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
-            this['cloud0'].x = this.game.world.width + (Math.floor(Math.random() * 800));
-            this['cloud0'].y = Math.floor(Math.random() * (this.game.world.height - 100));
-            this['cloud0'].frame =  spriteAry();
+        if(this.game.input.activePointer.justPressed() && this.starting == false) {
+          //this.game.state.start('Saves');
+          this.starting = true;
+          this.backBlimp.animations.pause('float');
+          this.backBall1.animations.pause('float');
+          this.backBall2.animations.pause('float');
         }
-        if(this['cloud1'].x > 0) {
-            this['cloud1'].x -= 1;
-        } else {
-            var sprites = [0, 1, 2, 3, 4, 5, 6];
-            function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
-            this['cloud1'].x = this.game.world.width + (Math.floor(Math.random() * 800));
-            this['cloud1'].y = Math.floor(Math.random() * (this.game.world.height - 100));
-            this['cloud1'].frame =  spriteAry();
-        }
-        if(this['cloud2'].x > 0) {
-            this['cloud2'].x -= 1;
-        } else {
-            var sprites = [0, 1, 2, 3, 4, 5, 6];
-            function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
-            this['cloud2'].x = this.game.world.width + (Math.floor(Math.random() * 800));
-            this['cloud2'].y = Math.floor(Math.random() * (this.game.world.height - 100));
-            this['cloud2'].frame =  spriteAry();
+
+        if (this.starting != true) {
+            if(this['cloud0'].x > 0) {
+                this['cloud0'].x -= 1;
+            } else {
+                var sprites = [0, 1, 2, 3, 4, 5, 6];
+                function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
+                this['cloud0'].x = this.game.world.width + 128 + (Math.floor(Math.random() * 800));
+                this['cloud0'].y = Math.floor(Math.random() * (this.game.world.height - 100));
+                this['cloud0'].frame =  spriteAry();
+            }
+            if(this['cloud1'].x > 0) {
+                this['cloud1'].x -= 1;
+            } else {
+                var sprites = [0, 1, 2, 3, 4, 5, 6];
+                function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
+                this['cloud1'].x = this.game.world.width + 128 + (Math.floor(Math.random() * 800));
+                this['cloud1'].y = Math.floor(Math.random() * (this.game.world.height - 100));
+                this['cloud1'].frame =  spriteAry();
+            }
+            if(this['cloud2'].x > 0) {
+                this['cloud2'].x -= 1;
+            } else {
+                var sprites = [0, 1, 2, 3, 4, 5, 6];
+                function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
+                this['cloud2'].x = this.game.world.width + 128 + (Math.floor(Math.random() * 800));
+                this['cloud2'].y = Math.floor(Math.random() * (this.game.world.height - 100));
+                this['cloud2'].frame =  spriteAry();
+            }
         }
     }
 }
