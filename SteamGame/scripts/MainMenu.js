@@ -64,6 +64,10 @@ steamGame.MainMenu.prototype = {
         this.titlePart11 = this.game.add.sprite(this.titlePart10.x + this.titlePart8.width - 24, this.titlePart3.y + this.titlePart3.height, 'title');
             this.titlePart11.frame = 11;
 
+        this.menuBGround2 = this.game.add.sprite(this.game.world.width + 2, this.game.world.height * 2, 'menuBG2');
+        this.menuBGround2.anchor.setTo(1, 1);
+        this.menuBGround2.scale.setTo(1.5, 1.5);
+
         this.menuBack = this.game.add.sprite(this.game.world.centerX, this.backBall1.y, 'plaque');
         this.menuBack.anchor.setTo(0.5, 0);
         this.menuBack.scale.setTo(0.87, 0.8);
@@ -152,6 +156,9 @@ steamGame.MainMenu.prototype = {
                 if((Math.floor(Math.random() * 600) < 5) && (this.menuBGround1.animations.isPlaying != true)) {
                     this.menuBGround1.animations.play('zap', 10, false);
                 }
+            }
+            if(this.menuBGround2.y > this.game.world.height) {
+                this.menuBGround2.y -= 1.5;
             }
             if(this.titlePart0.y + 600 > 0) {
                 this.titlePart0.y -= 1.5;
