@@ -105,18 +105,53 @@ steamGame.MainMenu.prototype = {
         if (this.starting == true) {
             if(this['cloud0'].x > 0) {
                 this['cloud0'].x -= 1;
+                this['cloud0'].y -= 0.5;
             } else {
                 this['cloud0'].destroy();
             }
             if(this['cloud1'].x > 0) {
                 this['cloud1'].x -= 1;
+                this['cloud1'].y -= 0.5;
             } else {
                 this['cloud1'].destroy();
             }
             if(this['cloud2'].x > 0) {
                 this['cloud2'].x -= 1;
+                this['cloud2'].y -= 0.5;
             } else {
                 this['cloud2'].destroy();
+            }
+            if(this.backBlimp.y + this.backBlimp.height > 0) {
+                this.backBlimp.y -= 0.5;
+            } else {
+                this.backBlimp.destroy();
+            }
+            if(this.titlePart0.y + 600 > 0) {
+                this.titlePart0.y -= 0.5;
+                this.titlePart1.y -= 0.5;
+                this.titlePart2.y -= 0.5;
+                this.titlePart3.y -= 0.5;
+                this.titlePart4.y -= 0.5;
+                this.titlePart5.y -= 0.5;
+                this.titlePart6.y -= 0.5;
+                this.titlePart7.y -= 0.5;
+                this.titlePart8.y -= 0.5;
+                this.titlePart9.y -= 0.5;
+                this.titlePart10.y -= 0.5;
+                this.titlePart11.y -= 0.5;
+            } else {
+                this.titlePart0.destroy();
+                this.titlePart1.destroy();
+                this.titlePart2.destroy();
+                this.titlePart3.destroy();
+                this.titlePart4.destroy();
+                this.titlePart5.destroy();
+                this.titlePart6.destroy();
+                this.titlePart7.destroy();
+                this.titlePart8.destroy();
+                this.titlePart9.destroy();
+                this.titlePart10.destroy();
+                this.titlePart11.destroy();
             }
         }
     }
