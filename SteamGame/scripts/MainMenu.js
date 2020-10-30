@@ -265,7 +265,7 @@ steamGame.MainMenu.prototype = {
             }
             if (this.pointerPos == 0) {
                 this.menuPointer.y = this.menuText2.y
-                if (enterKey.isDown) {
+                if (enterKey.isDown || space.isDown) {
                     //enter default save state loading later, for now just start game
                     this.game.state.start('Game');
                     //for now this is gonna cause a massive error
@@ -277,7 +277,7 @@ steamGame.MainMenu.prototype = {
             }
             else if (this.pointerPos == 2) {
                 this.menuPointer.y = this.menuText4.y
-                if (enterKey.isDown) {
+                if (enterKey.isDown || space.isDown) {
                     window.location.href = "http://tsar-dev-collective.github.io";
                 }
             }
