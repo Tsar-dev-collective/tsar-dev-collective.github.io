@@ -12,6 +12,8 @@ canvas {
 }
 
 body {
+    font-family: 'arcadeclassicregular';
+    word-spacing: 10px;
     padding: 0px;
     margin: 0px;
 }

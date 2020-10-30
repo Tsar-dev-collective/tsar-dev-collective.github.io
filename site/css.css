@@ -1,3 +1,16 @@
 a:hover {
     color:blue;
 }
+
+@font-face {
+    font-family: 'arcadeclassicregular';
+    src: url('/SteamGame/arcadeText/arcadeclassic-webfont.woff2') format('woff2'),
+         url('/SteamGame/arcadeText/arcadeclassic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'arcadeclassicregular';
+    word-spacing: 10px;
+}
