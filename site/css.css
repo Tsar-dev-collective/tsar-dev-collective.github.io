@@ -17,5 +17,9 @@ body {
 
 a:hover {
     color: dodgerblue;
-    text-decoration: italic;
-  }
+    font-style: italic;
+}
+
+.link {
+    color: black;
+}
