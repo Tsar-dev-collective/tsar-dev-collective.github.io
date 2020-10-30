@@ -80,8 +80,8 @@ steamGame.MainMenu.prototype = {
         this.menuText1.anchor.setTo(0.5, 0.5);
         this.menuText2 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.4, 'pixelFont', 'New Game', 40);
         this.menuText2.anchor.setTo(0.5, 0.5);
-        //this.menuText3 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.5, 'pixelFont', 'Continue Game', 40);
-        //this.menuText3.anchor.setTo(0.5, 0.5);
+        this.menuText3 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.5, 'pixelFont', 'Continue Game', 40);
+        this.menuText3.anchor.setTo(0.5, 0.5);
         this.menuText4 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.6, 'pixelFont', 'Exit Game', 40);
         this.menuText4.anchor.setTo(0.5, 0.5);
 
@@ -175,7 +175,7 @@ steamGame.MainMenu.prototype = {
                 this.menuBack.y -= 1.5;
                 this.menuText1.y -= 1.5;
                 this.menuText2.y -= 1.5;
-                //this.menuText3.y -= 1.5;
+                this.menuText3.y -= 1.5;
                 this.menuText4.y -= 1.5;
                 this.menuPointer.y -= 1.5;
             }
@@ -277,7 +277,7 @@ steamGame.MainMenu.prototype = {
                 }
             }
             else if (this.pointerPos == 1) {
-                this.menuPointer.y = this.game.world.height * 0.5;
+                this.menuPointer.y = this.menuText3.y;
                 //replace with menuText3 when continue game is an option
             }
             else if (this.pointerPos == 2) {
