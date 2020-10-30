@@ -73,7 +73,7 @@ steamGame.MainMenu.prototype = {
         this.menuBack.scale.setTo(0.87, 0.8);
 
         //this.game.load.bitmapFont('pixelFont', 'sprites/pixelFont.png', 'sprites/pixelFont.fnt');
-        this.startText = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 0.75, 'pixelFont', 'Click the page to begin.', 48);
+        this.startText = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 0.75, 'pixelFont', 'Press space to begin.', 48);
         this.startText.anchor.setTo(0.5, 0.5);
 
         this.menuText1 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.2, 'pixelFont', 'Wardenclyffe', 80);
@@ -85,14 +85,25 @@ steamGame.MainMenu.prototype = {
         this.menuText4 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.6, 'pixelFont', 'Exit Game', 40);
         this.menuText4.anchor.setTo(0.5, 0.5);
 
+        this.menuPointer = this.game.add.sprite(this.menuText2.x - this.menuText2.width - 30, this.menuText2.y, 'menuPointer');
+        this.menuPointer.anchor.setTo(0.5, 0.5);
+        this.menuPointer.animations.add('spin', [0, 0, 1, 2, 3, 4, 4, 3, 2, 1]);
+
         this.menuBGround1 = this.game.add.sprite(-2, this.game.world.height * 2, 'menuBG');
         this.menuBGround1.anchor.setTo(0, 1);
         this.menuBGround1.scale.setTo(1.5, 1.5);
         this.menuBGround1.animations.add('zap', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 0]);
+    
+        space = this.game.input.keyboard.addKey(32);
+        upArrow = this.game.input.keyboard.addKey(38);
+        downArrow = this.game.input.keyboard.addKey(40);
+        upKey = this.game.input.keyboard.addKey(87);
+        downKey = this.game.input.keyboard.addKey(83);
+        enterKey = this.game.input.keyboard.addKey(13);
     },
 
     update: function() {
-        if(this.game.input.activePointer.justPressed() && this.starting == false) {
+        if(space.isDown && this.starting == false) {
           //this.game.state.start('Saves');
           this.starting = true;
           /*this.backBlimp.animations.pause('float');
@@ -166,6 +177,7 @@ steamGame.MainMenu.prototype = {
                 this.menuText2.y -= 1.5;
                 //this.menuText3.y -= 1.5;
                 this.menuText4.y -= 1.5;
+                this.menuPointer.y -= 1.5;
             }
             if(this.menuBGround1.y > this.game.world.height + 2) {
                 this.menuBGround1.y -= 1.5;
@@ -176,6 +188,8 @@ steamGame.MainMenu.prototype = {
             }
             if(this.menuBGround2.y > this.game.world.height + 2) {
                 this.menuBGround2.y -= 1.5;
+            } else if (this.menuBGround2.y <= this.game.world.height + 2) {
+                this.menuState = true;
             }
             if(this.startText.alive == true) {
                 this.startText.destroy();
@@ -206,6 +220,66 @@ steamGame.MainMenu.prototype = {
                 this.titlePart9.destroy();
                 this.titlePart10.destroy();
                 this.titlePart11.destroy();
+            }
+        }
+
+        if (this.menuState == true) {
+            if (this.menuPointer.animations.isPlaying != true) {
+                this.menuPointer.animations.play('spin', 12, true);
+            }
+            if (downArrow.duration < 1) {
+                if (downArrow.isDown) {
+                    if (this.pointerPos < 2) {
+                        this.pointerPos += 1;
+                    } else {
+                        this.pointerPos = 0;
+                    }
+                }
+            }
+            if (downKey.duration < 1) {
+                if (downKey.isDown) {
+                    if (this.pointerPos < 2) {
+                        this.pointerPos += 1;
+                    } else {
+                        this.pointerPos = 0;
+                    }
+                }
+            }
+            if (upArrow.duration < 1) {
+                if (upArrow.isDown) {
+                    if (this.pointerPos > 0) {
+                        this.pointerPos -= 1;
+                    } else {
+                        this.pointerPos = 2;
+                    }
+                }
+            }
+            if (upKey.duration < 1) {
+                if (upKey.isDown) {
+                    if (this.pointerPos > 0) {
+                        this.pointerPos -= 1;
+                    } else {
+                        this.pointerPos = 2;
+                    }
+                }
+            }
+            if (this.pointerPos == 0) {
+                this.menuPointer.y = this.menuText2.y
+                if (enterKey.isDown) {
+                    //enter default save state loading later, for now just start game
+                    this.game.state.start('Game');
+                    //for now this is gonna cause a massive error
+                }
+            }
+            else if (this.pointerPos == 1) {
+                this.menuPointer.y = this.game.world.height * 0.5;
+                //replace with menuText3 when continue game is an option
+            }
+            else if (this.pointerPos == 2) {
+                this.menuPointer.y = this.menuText4.y
+                if (enterKey.isDown) {
+                    window.location.href = "http://tsar-dev-collective.github.io";
+                }
             }
         }
     }
