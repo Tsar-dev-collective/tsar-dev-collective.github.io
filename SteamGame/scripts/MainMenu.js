@@ -76,6 +76,15 @@ steamGame.MainMenu.prototype = {
         this.startText = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 0.75, 'pixelFont', 'Click the page to begin.', 48);
         this.startText.anchor.setTo(0.5, 0.5);
 
+        this.menuText1 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.2, 'pixelFont', 'Wardenclyffe', 80);
+        this.menuText1.anchor.setTo(0.5, 0.5);
+        this.menuText2 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.4, 'pixelFont', 'New Game', 40);
+        this.menuText2.anchor.setTo(0.5, 0.5);
+        //this.menuText3 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.5, 'pixelFont', 'Continue Game', 40);
+        //this.menuText3.anchor.setTo(0.5, 0.5);
+        this.menuText4 = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 1.6, 'pixelFont', 'Exit Game', 40);
+        this.menuText4.anchor.setTo(0.5, 0.5);
+
         this.menuBGround1 = this.game.add.sprite(-2, this.game.world.height * 2, 'menuBG');
         this.menuBGround1.anchor.setTo(0, 1);
         this.menuBGround1.scale.setTo(1.5, 1.5);
@@ -153,6 +162,10 @@ steamGame.MainMenu.prototype = {
                 this.backBall1.y -= 1.5;
                 this.backBall2.y -= 1.5;
                 this.menuBack.y -= 1.5;
+                this.menuText1.y -= 1.5;
+                this.menuText2.y -= 1.5;
+                //this.menuText3.y -= 1.5;
+                this.menuText4.y -= 1.5;
             }
             if(this.menuBGround1.y > this.game.world.height + 2) {
                 this.menuBGround1.y -= 1.5;
