@@ -70,7 +70,9 @@ steamGame.MainMenu.prototype = {
 
         this.menuBack = this.game.add.sprite(this.game.world.centerX, this.backBall1.y, 'plaque');
         this.menuBack.anchor.setTo(0.5, 0);
-        this.menuBack.scale.setTo(0.87, 0.8);
+        this.menuSizingVarX = ((this.game.world.width / 10) * 7) / this.menuBack.width;
+        this.menuSizingVarY = ((this.game.world.height / 10) * 9.5) / this.menuBack.height;
+        this.menuBack.scale.setTo(this.menuSizingVarX, this.menuSizingVarY);
 
         //this.game.load.bitmapFont('pixelFont', 'sprites/pixelFont.png', 'sprites/pixelFont.fnt');
         this.startText = this.game.add.bitmapText(this.game.world.centerX, this.game.world.height * 0.75, 'pixelFont', 'Press space to begin.', 48);
