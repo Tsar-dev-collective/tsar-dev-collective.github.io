@@ -66,7 +66,8 @@ steamGame.MainMenu.prototype = {
 
         this.menuBGround2 = this.game.add.sprite(this.game.world.width + 2, this.game.world.height * 2, 'menuBG2');
         this.menuBGround2.anchor.setTo(1, 1);
-        this.menuBGround2.scale.setTo(1.5, 1.5);
+        this.menuBGSizingVar = ((this.game.world.width / 10) * 3.5) / this.menuBGround2.width;
+        this.menuBGround2.scale.setTo(this.menuBGSizingVar, this.menuBGSizingVar);
 
         this.menuBack = this.game.add.sprite(this.game.world.centerX, this.backBall1.y, 'plaque');
         this.menuBack.anchor.setTo(0.5, 0);
@@ -93,7 +94,7 @@ steamGame.MainMenu.prototype = {
 
         this.menuBGround1 = this.game.add.sprite(-2, this.game.world.height * 2, 'menuBG');
         this.menuBGround1.anchor.setTo(0, 1);
-        this.menuBGround1.scale.setTo(1.5, 1.5);
+        this.menuBGround1.scale.setTo(this.menuBGSizingVar, this.menuBGSizingVar);
         this.menuBGround1.animations.add('zap', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 0]);
     
         space = this.game.input.keyboard.addKey(32);
