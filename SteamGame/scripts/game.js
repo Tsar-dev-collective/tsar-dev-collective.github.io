@@ -1,4 +1,4 @@
-var SteamGame = steamGame || {}
+var steamGame = steamGame || {}
 
 steamGame.Game = function(){}
 
