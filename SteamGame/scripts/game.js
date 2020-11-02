@@ -33,9 +33,9 @@ steamGame.Game.prototype = {
         this.player.animations.add('idleRight', [0, 1, 2, 3, 4], 4, true);
         this.player.animations.add('idleUp', [16, 17, 18, 19, 20], 4, true);
         this.player.animations.add('runDown', [13, 14, 15, 14], 4, true);
-        this.player.animations.add('runLeft', [4, 5, 6, 5], 4, true);
+        this.player.animations.add('runLeft', [5, 6, 7, 6], 4, true);
         this.player.animations.add('runUp', [22, 23, 24, 23], 4, true);
-        this.player.animations.add('runRight', [4, 5, 6, 5], 4, true);
+        this.player.animations.add('runRight', [5, 6, 7, 6], 4, true);
         this.game.physics.arcade.enable(this.player);
         this.playerSpeed = 200;
         this.player.body.collideWorldBounds = true;
