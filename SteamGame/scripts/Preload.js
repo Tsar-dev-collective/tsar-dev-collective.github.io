@@ -30,6 +30,8 @@ steamGame.Preload.prototype = {
         this.load.bitmapFont('pixelFont', 'sprites/pixelFont.png', 'sprites/pixelFont.fnt');
             this.load.atlasJSONHash('menuPointer', 'sprites/images/menuPointer.png', 'sprites/images/menuPointer.json');
         this.load.atlasJSONHash('protest', 'sprites/game/testingProtag.png', 'sprites/game/testingProtag.json');
+            this.load.image('debugTiles', 'sprites/game/testTiles.png');
+        this.load.tilemap('debugMap', 'maps/debugMap.json', null, Phaser.Tilemap.TILED_JSON);
     },
     create: function() {
         this.state.start('MainMenu');

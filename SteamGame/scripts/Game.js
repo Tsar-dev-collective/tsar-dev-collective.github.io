@@ -21,12 +21,17 @@ steamGame.Game.prototype = {
         //begin scene setup
         this.game.stage.backgroundColor = '#acbfbc';
         this.scalingFactor = (this.game.world.width / 19) / 32;
+        this.map = this.game.add.tilemap('debugMap');
+        this.map.addTilesetImage('TileSets', 'debugTiles');
+        this.floor = this.map.createLayer('floor');
+        //this.wall = this.map.createLayer('wall');
+        this.floor.resizeWorld();
 
         //menustate declarations
         this.menuState = 0;
 
         //set scene boundary
-        this.game.world.setBounds(0, 0, this.game.world.width, this.game.world.height);
+        //this.game.world.setBounds(0, 0, this.game.world.width, this.game.world.height);
  
         //player declaration
         this.player = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'protest');
@@ -45,6 +50,7 @@ steamGame.Game.prototype = {
         this.player.body.collideWorldBounds = true;
     },
     update: function(){
+        this.game.physics.arcade.collide(this.player, this.blockedLayer);
         if (this.menuState == 0) {
             //I know this kind of movement tracking has fatal flaws, I don't care, it works
             if (upKey.isDown || upArrow.isDown) {
