@@ -27,7 +27,7 @@ steamGame.Game.prototype = {
 
         //set scene boundary
         this.game.world.setBounds(0, 0, this.game.world.width, this.game.world.height);
-
+ 
         //player declaration
         this.player = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'protest');
         this.player.anchor.setTo(0.5, 0.5);
