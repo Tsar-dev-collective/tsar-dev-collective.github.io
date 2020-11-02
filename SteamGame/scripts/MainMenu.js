@@ -104,6 +104,7 @@ steamGame.MainMenu.prototype = {
         upKey = this.game.input.keyboard.addKey(87);
         downKey = this.game.input.keyboard.addKey(83);
         enterKey = this.game.input.keyboard.addKey(13);
+        skipKey = this.game.input.keyboard.addKey(48); //debug key
     },
 
     update: function() {
@@ -118,6 +119,10 @@ steamGame.MainMenu.prototype = {
               this.menuBack.anchor.setTo(0.5, 0);*/
 
           //}
+        }
+        //debugkey handler
+        if (skipKey.isDown) {
+            this.game.state.start('Game');
         }
 
         if (this.starting != true) {

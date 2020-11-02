@@ -24,8 +24,12 @@ steamGame.Game.prototype = {
         this.map = this.game.add.tilemap('debugMap');
         this.map.addTilesetImage('TileSets', 'debugTiles');
         this.floor = this.map.createLayer('floor');
+        this.floor.scale.set(this.scalingFactor);
         this.wall = this.map.createLayer('wall');
-        //this.floor.resizeWorld();
+        this.wall.scale.set(this.scalingFactor);
+        this.game.physics.arcade.enable(this.wall);
+        this.map.setCollisionBetween(1, 2000, true, 'wall');
+        this.floor.resizeWorld();
 
         //menustate declarations
         this.menuState = 0;
@@ -47,10 +51,12 @@ steamGame.Game.prototype = {
         this.player.animations.add('runRight', [5, 6, 7, 6], 4, true);
         this.game.physics.arcade.enable(this.player);
         this.playerSpeed = 200;
+        this.player.body.setSize(16, 24, 8, 4);
         this.player.body.collideWorldBounds = true;
+        this.game.camera.follow(this.player, 1);
     },
     update: function(){
-        this.game.physics.arcade.collide(this.player, this.blockedLayer);
+        this.game.physics.arcade.collide(this.player, this.wall.body);
         if (this.menuState == 0) {
             //I know this kind of movement tracking has fatal flaws, I don't care, it works
             if (upKey.isDown || upArrow.isDown) {

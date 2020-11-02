@@ -27,7 +27,7 @@ steamGame.Boot.prototype = {
         this.scale.pageAlignHorizontally = true;
 
         //set the game size automatically within the bounds from earlier
-        this.scale.setScreenSize(true);
+        this.scale.refresh(true);
 
         //phaser has 3 physics engines available to us
         //arcade, impact, and matter.js
