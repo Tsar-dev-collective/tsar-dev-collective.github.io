@@ -24,8 +24,8 @@ steamGame.Game.prototype = {
         this.map = this.game.add.tilemap('debugMap');
         this.map.addTilesetImage('TileSets', 'debugTiles');
         this.floor = this.map.createLayer('floor');
-        //this.wall = this.map.createLayer('wall');
-        this.floor.resizeWorld();
+        this.wall = this.map.createLayer('wall');
+        //this.floor.resizeWorld();
 
         //menustate declarations
         this.menuState = 0;
