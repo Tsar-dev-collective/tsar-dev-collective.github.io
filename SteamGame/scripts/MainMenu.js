@@ -4,6 +4,7 @@ steamGame.MainMenu.prototype = {
     create: function() {
         this.starting = false;
         this.menustate = false;
+        this.pointerPos = 0;
 
         this.game.stage.backgroundColor = '#75a1a0';
 

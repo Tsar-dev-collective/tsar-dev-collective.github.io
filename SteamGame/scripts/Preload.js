@@ -29,6 +29,7 @@ steamGame.Preload.prototype = {
             this.load.image('menuBG2', 'sprites/images/title2.png');
         this.load.bitmapFont('pixelFont', 'sprites/pixelFont.png', 'sprites/pixelFont.fnt');
             this.load.atlasJSONHash('menuPointer', 'sprites/images/menuPointer.png', 'sprites/images/menuPointer.json');
+        this.load.atlasJSONHash('protest', 'sprites/game/testingProtag.png', 'sprites/game/testingProtag.json');
     },
     create: function() {
         this.state.start('MainMenu');
