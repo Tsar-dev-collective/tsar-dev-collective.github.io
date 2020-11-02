@@ -6,9 +6,13 @@ steamGame.Game.prototype = {
     create: function(){
         //movement 
         upKey = this.game.input.keyboard.addKey(87) //w
+        upArrow = this.game.input.keyboard.addKey(38); // ^
         leftKey = this.game.input.keyboard.addKey(65) //a
+        leftArrow = this.game.input.keyboard.addKey(37); // <-
         downKey = this.game.input.keyboard.addKey(83) //s
+        downArrow = this.game.input.keyboard.addKey(40); // v
         rightKey = this.game.input.keyboard.addKey(68) //d
+        rightArrow = this.game.input.keyboard.addKey(39); // ->
         //other interactivity
         selectKey = this.game.input.keyboard.addKey(27) //escape
         startKey = this.game.input.keyboard.addKey(69) // e
@@ -43,16 +47,16 @@ steamGame.Game.prototype = {
     update: function(){
         if (this.menuState == 0) {
             //I know this kind of movement tracking has fatal flaws, I don't care, it works
-            if (upKey.isDown) {
+            if (upKey.isDown || upArrow.isDown) {
                 this.player.body.velocity.y = -this.playerSpeed;
-            } else if (downKey.isDown) {
+            } else if (downKey.isDown || downArrow.isDown) {
                 this.player.body.velocity.y = this.playerSpeed;
             } else {
                 this.player.body.velocity.y = 0;
             }
-            if (rightKey.isDown) {
+            if (rightKey.isDown || rightArrow.isDown) {
                 this.player.body.velocity.x = this.playerSpeed;
-            } else if (leftKey.isDown) {
+            } else if (leftKey.isDown || leftArrow.isDown) {
                 this.player.body.velocity.x = -this.playerSpeed;
             } else {
                 this.player.body.velocity.x = 0;
