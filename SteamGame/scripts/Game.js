@@ -4,6 +4,7 @@ steamGame.Game = function(){}
 
 steamGame.Game.prototype = {
     create: function(){
+
         //movement 
         upKey = this.game.input.keyboard.addKey(87) //w
         upArrow = this.game.input.keyboard.addKey(38); // ^
@@ -24,11 +25,12 @@ steamGame.Game.prototype = {
         this.map = this.game.add.tilemap('debugMap');
         this.map.addTilesetImage('TileSets', 'debugTiles');
         this.floor = this.map.createLayer('floor');
-        this.floor.scale.set(this.scalingFactor);
+        //this.floor.scale.set(this.scalingFactor);
         this.wall = this.map.createLayer('wall');
-        this.wall.scale.set(this.scalingFactor);
+        //this.wall.scale.set(this.scalingFactor);
         this.game.physics.arcade.enable(this.wall);
-        this.map.setCollisionBetween(1, 2000, true, 'wall');
+        //this.wall.debug = true;
+        this.map.setCollisionBetween(4, 17, true, 'wall');
         this.floor.resizeWorld();
 
         //menustate declarations
@@ -40,7 +42,7 @@ steamGame.Game.prototype = {
         //player declaration
         this.player = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'protest');
         this.player.anchor.setTo(0.5, 0.5);
-        this.player.scale.setTo(this.scalingFactor * 1.3, this.scalingFactor * 1.3);
+        this.player.scale.setTo(2.6, 2.6);
         this.player.animations.add('idleDown', [8, 9, 10, 11, 12], 4, true);
         this.player.animations.add('idleLeft', [0, 1, 2, 3, 4], 4, true);
         this.player.animations.add('idleRight', [0, 1, 2, 3, 4], 4, true);
@@ -50,28 +52,28 @@ steamGame.Game.prototype = {
         this.player.animations.add('runUp', [22, 23, 24, 23], 4, true);
         this.player.animations.add('runRight', [5, 6, 7, 6], 4, true);
         this.game.physics.arcade.enable(this.player);
+        this.player.body.enbable = true;
+        this.player.debug = true;
         this.playerSpeed = 200;
         this.player.body.setSize(16, 24, 8, 4);
         this.player.body.collideWorldBounds = true;
         this.game.camera.follow(this.player, 1);
     },
     update: function(){
-        this.game.physics.arcade.collide(this.player, this.wall.body);
+        this.game.physics.arcade.collide(this.player, this.wall);
         if (this.menuState == 0) {
             //I know this kind of movement tracking has fatal flaws, I don't care, it works
+            this.player.body.velocity.x = 0;
+            this.player.body.velocity.y = 0;
             if (upKey.isDown || upArrow.isDown) {
                 this.player.body.velocity.y = -this.playerSpeed;
             } else if (downKey.isDown || downArrow.isDown) {
                 this.player.body.velocity.y = this.playerSpeed;
-            } else {
-                this.player.body.velocity.y = 0;
             }
             if (rightKey.isDown || rightArrow.isDown) {
                 this.player.body.velocity.x = this.playerSpeed;
             } else if (leftKey.isDown || leftArrow.isDown) {
                 this.player.body.velocity.x = -this.playerSpeed;
-            } else {
-                this.player.body.velocity.x = 0;
             }
 
             //animation checker for player
