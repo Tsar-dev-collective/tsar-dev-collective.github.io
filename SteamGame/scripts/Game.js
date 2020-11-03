@@ -25,9 +25,9 @@ steamGame.Game.prototype = {
         this.map = this.game.add.tilemap('debugMap');
         this.map.addTilesetImage('TileSets', 'debugTiles');
         this.floor = this.map.createLayer('floor');
-        //this.floor.scale.set(this.scalingFactor);
+        this.floor.setScale(this.scalingFactor);
         this.wall = this.map.createLayer('wall');
-        //this.wall.scale.set(this.scalingFactor);
+        this.wall.setScale(this.scalingFactor);
         this.game.physics.arcade.enable(this.wall);
         //this.wall.debug = true;
         this.map.setCollisionBetween(4, 17, true, 'wall');
