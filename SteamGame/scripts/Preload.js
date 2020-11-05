@@ -10,7 +10,7 @@ steamGame.Preload.prototype = {
         this.splash.animations.add('spin');
         this.splash.animations.play('spin', 7, true);
 
-        this.preloadBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY + 128, 'preloadbarB');
+        this.preloadBar = this.add.sprite(this.game.world.centerX - 10, this.game.world.centerY + 128, 'preloadbarB');
         this.preloadBar.anchor.setTo(0.5);
 
         this.preloadBarF = this.add.sprite(this.game.world.centerX, this.game.world.centerY + 128, 'preloadbarF');
