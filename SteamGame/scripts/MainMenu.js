@@ -188,7 +188,7 @@ steamGame.MainMenu.prototype = {
                 this.menuText4.y -= 1.5;
                 this.menuPointer.y -= 1.5;
             }
-            if(this.menuBGround1.y > this.game.world.height + 2) {
+            if(this.menuBGround1.y > this.game.world.height + 4) {
                 this.menuBGround1.y -= 1.5;
             } else {
                 if((Math.floor(Math.random() * 600) < 5) && (this.menuBGround1.animations.isPlaying != true)) {
