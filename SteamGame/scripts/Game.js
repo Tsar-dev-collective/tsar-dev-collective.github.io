@@ -42,7 +42,7 @@ steamGame.Game.prototype = {
         //player declaration
         this.player = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'protest');
         this.player.anchor.setTo(0.5, 0.5);
-        this.player.setScale(this.scalingFactor * 1.3);
+        this.player.scale.setTo(this.scalingFactor * 1.3, this.scalingFactor * 1.3);
         this.player.animations.add('idleDown', [8, 9, 10, 11, 12], 4, true);
         this.player.animations.add('idleLeft', [0, 1, 2, 3, 4], 4, true);
         this.player.animations.add('idleRight', [0, 1, 2, 3, 4], 4, true);
