@@ -14,7 +14,7 @@ steamGame.MainMenu.prototype = {
         this.backBlimp.animations.add('float');
         this.backBlimp.animations.play('float', 8, true);
 
-        this.backBall2 = this.game.add.sprite(155, this.game.world.height, 'menuBall2');
+        this.backBall2 = this.game.add.sprite(160, this.game.world.height, 'menuBall2');
         this.backBall2.anchor.setTo(0, 0.95);
         this.backBall2.scale.setTo(0.2, 0.2);
         this.backBall2.animations.add('float');
