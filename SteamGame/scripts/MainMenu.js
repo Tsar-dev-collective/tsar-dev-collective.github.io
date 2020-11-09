@@ -156,7 +156,7 @@ steamGame.MainMenu.prototype = {
         }
         if (this.starting == true) {
             if(this['cloud0'].x > 0) {
-                this['cloud0'].x -= 1;
+                this['cloud0'].x -= 1.2;
                 this['cloud0'].y -= 3.2;
             } else {
                 this['cloud0'].destroy();
@@ -168,7 +168,7 @@ steamGame.MainMenu.prototype = {
                 this['cloud1'].destroy();
             }
             if(this['cloud2'].x > 0) {
-                this['cloud2'].x -= 1;
+                this['cloud2'].x -= 0.8;
                 this['cloud2'].y -= 3.2;
             } else {
                 this['cloud2'].destroy();
