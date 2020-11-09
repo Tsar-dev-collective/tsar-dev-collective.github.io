@@ -187,16 +187,18 @@ steamGame.MainMenu.prototype = {
                 this.menuText3.y -= 3.5;
                 this.menuText4.y -= 3.5;
                 this.menuPointer.y -= 3.5;
+            } else {
+                this.menuState = true;
             }
             if(this.menuBGround1.y > this.game.world.height + 4) {
-                this.menuBGround1.y -= 2.5;
+                this.menuBGround1.y -= 4.2;
             } else {
                 if((Math.floor(Math.random() * 600) < 5) && (this.menuBGround1.animations.isPlaying != true)) {
                     this.menuBGround1.animations.play('zap', 10, false);
                 }
             }
             if(this.menuBGround2.y > this.game.world.height + 2) {
-                this.menuBGround2.y -= 2.5;
+                this.menuBGround2.y -= 4.2;
             } else if (this.menuBGround2.y <= this.game.world.height + 2) {
                 this.menuState = true;
             }
