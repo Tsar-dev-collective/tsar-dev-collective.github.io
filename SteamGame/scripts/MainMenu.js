@@ -157,36 +157,36 @@ steamGame.MainMenu.prototype = {
         if (this.starting == true) {
             if(this['cloud0'].x > 0) {
                 this['cloud0'].x -= 1;
-                this['cloud0'].y -= 2.5;
+                this['cloud0'].y -= 3.2;
             } else {
                 this['cloud0'].destroy();
             }
             if(this['cloud1'].x > 0) {
                 this['cloud1'].x -= 1;
-                this['cloud1'].y -= 2.5;
+                this['cloud1'].y -= 3.2;
             } else {
                 this['cloud1'].destroy();
             }
             if(this['cloud2'].x > 0) {
                 this['cloud2'].x -= 1;
-                this['cloud2'].y -= 2.5;
+                this['cloud2'].y -= 3.2;
             } else {
                 this['cloud2'].destroy();
             }
             if(this.backBlimp.y + this.backBlimp.height > 0) {
-                this.backBlimp.y -= 2.5;
+                this.backBlimp.y -= 3.2;
             } else {
                 this.backBlimp.destroy();
             }
             if(this.menuBack.y + (this.menuBack.height / 2) > this.game.world.height / 2) {
-                this.backBall1.y -= 3.5;
-                this.backBall2.y -= 3.5;
-                this.menuBack.y -= 3.5;
-                this.menuText1.y -= 3.5;
-                this.menuText2.y -= 3.5;
-                this.menuText3.y -= 3.5;
-                this.menuText4.y -= 3.5;
-                this.menuPointer.y -= 3.5;
+                this.backBall1.y -= 3.9;
+                this.backBall2.y -= 3.9;
+                this.menuBack.y -= 3.9;
+                this.menuText1.y -= 3.9;
+                this.menuText2.y -= 3.9;
+                this.menuText3.y -= 3.9;
+                this.menuText4.y -= 3.9;
+                this.menuPointer.y -= 3.9;
             } else {
                 this.menuState = true;
             }
