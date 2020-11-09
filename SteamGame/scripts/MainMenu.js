@@ -127,7 +127,7 @@ steamGame.MainMenu.prototype = {
 
         if (this.starting != true) {
             if(this['cloud0'].x > 0) {
-                this['cloud0'].x -= 1;
+                this['cloud0'].x -= 1.2;
             } else {
                 var sprites = [0, 1, 2, 3, 4, 5, 6];
                 function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
@@ -145,7 +145,7 @@ steamGame.MainMenu.prototype = {
                 this['cloud1'].frame =  spriteAry();
             }
             if(this['cloud2'].x > 0) {
-                this['cloud2'].x -= 1;
+                this['cloud2'].x -= 0.8;
             } else {
                 var sprites = [0, 1, 2, 3, 4, 5, 6];
                 function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
