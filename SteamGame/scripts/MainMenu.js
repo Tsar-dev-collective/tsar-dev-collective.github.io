@@ -179,14 +179,14 @@ steamGame.MainMenu.prototype = {
                 this.backBlimp.destroy();
             }
             if(this.menuBack.y + (this.menuBack.height / 2) > this.game.world.height / 2) {
-                this.backBall1.y -= 2.5;
-                this.backBall2.y -= 2.5;
-                this.menuBack.y -= 2.5;
-                this.menuText1.y -= 2.5;
-                this.menuText2.y -= 2.5;
-                this.menuText3.y -= 2.5;
-                this.menuText4.y -= 2.5;
-                this.menuPointer.y -= 2.5;
+                this.backBall1.y -= 3.5;
+                this.backBall2.y -= 3.5;
+                this.menuBack.y -= 3.5;
+                this.menuText1.y -= 3.5;
+                this.menuText2.y -= 3.5;
+                this.menuText3.y -= 3.5;
+                this.menuText4.y -= 3.5;
+                this.menuPointer.y -= 3.5;
             }
             if(this.menuBGround1.y > this.game.world.height + 4) {
                 this.menuBGround1.y -= 2.5;
