@@ -18,6 +18,7 @@ steamGame.Game.prototype = {
         selectKey = this.game.input.keyboard.addKey(27) //escape
         startKey = this.game.input.keyboard.addKey(69) // e
         mapKey = this.game.input.keyboard.addKey(81) // q
+        debugKey = this.game.input.keyboard.addKey(48); // 0
 
         //begin scene setup
         this.game.stage.backgroundColor = '#acbfbc';
@@ -88,8 +89,12 @@ steamGame.Game.prototype = {
     },
     update: function(){
         /***************************************** Collision handler for player vs. layers and debug text ***************************************************************/
-        //this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
-        //this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
+        
+        if (debugKey.isDown) {
+            //this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
+            //this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
+        }
+
         this.game.physics.arcade.collide(this.player, this.wall, this.mapHurt);
         if (this.menuState == 0) {
             /***************************************** Player HP manager ******************************************************************************************/

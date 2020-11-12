@@ -279,12 +279,10 @@ steamGame.MainMenu.prototype = {
                 if (enterKey.isDown) {
                     //enter default save state loading later, for now just start game
                     this.game.state.start('Berlin0');
-                    //for now this is gonna cause a massive error
                 }
                 if (space.isDown) {
                     //enter default save state loading later, for now just start game
                     this.game.state.start('Berlin0');
-                    //for now this is gonna cause a massive error
                 }
             }
             else if (this.pointerPos == 1) {
