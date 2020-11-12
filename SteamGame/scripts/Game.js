@@ -36,7 +36,7 @@ steamGame.Game.prototype = {
         //menustate declarations
         this.menuState = 0;
         //ui declaration
-        this.hp = 8;
+        this.hp = 6;
 
         //set scene boundary
         //this.game.world.setBounds(0, 0, this.game.world.width, this.game.world.height);
@@ -63,13 +63,16 @@ steamGame.Game.prototype = {
         //Heart declaration
          for (i = 0; i < (this.hp/2); i++) {
             this.hPosX = 0;
+            this.hSpawn;
             if(this['heart' + (i-1).toString()] != null){
                 this.hPosX = i; 
             }
-            if(this.hPosX != 0 && this.hPosX > 0){
-                this.hPosX = this['heart' + (this.hPosX - 1)].width;
+            if(this.hPosX > 0){
+                this.hSpawn = this['heart' + (i - 1).toString()].width + this['heart' + (i - 1).toString()].x - 5;
+            } else {
+                this.hSpawn = 0;
             }
-            this['heart' + i.toString()] = this.game.add.sprite((this.hPosX) + 10, 10 , 'heart');
+            this['heart' + i.toString()] = this.game.add.sprite(this.hSpawn + 5, 10 , 'heart');
             this['heart' + i.toString()].fixedToCamera = true;
             this['heart' + i.toString()].scale.setTo (this.scalingFactor*0.75,this.scalingFactor*0.75)
          }
