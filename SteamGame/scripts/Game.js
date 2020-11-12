@@ -35,6 +35,8 @@ steamGame.Game.prototype = {
 
         //menustate declarations
         this.menuState = 0;
+        //ui declaration
+        this.hp = 8;
 
         //set scene boundary
         //this.game.world.setBounds(0, 0, this.game.world.width, this.game.world.height);
@@ -58,6 +60,20 @@ steamGame.Game.prototype = {
         this.player.body.setSize(12, 22, 10, 6);
         this.player.body.collideWorldBounds = true;
         this.game.camera.follow(this.player, 1);
+        //Heart declaration
+         for (i = 0; i < (this.hp/2); i++) {
+            this.hPosX = 0;
+            if(this['heart' + (i-1).toString()] != null){
+                this.hPosX = i; 
+            }
+            if(this.hPosX != 0 && this.hPosX > 0){
+                this.hPosX = this['heart' + (this.hPosX - 1)].width;
+            }
+            this['heart' + i.toString()] = this.game.add.sprite((this.hPosX) + 10, 10 , 'heart');
+            this['heart' + i.toString()].fixedToCamera = true;
+            this['heart' + i.toString()].scale.setTo (this.scalingFactor*0.75,this.scalingFactor*0.75)
+         }
+
     },
     update: function(){
         this.game.physics.arcade.collide(this.player, this.wall);
