@@ -96,28 +96,84 @@ steamGame.Game.prototype = {
             //health checker
             if (this.player.currentHP < this.player.maxHP) {
                 this.player.diffHP = this.player.maxHP - this.player.currentHP;
-                if(this.player.diffHP <= 2) {
-                    if(this.player.diffHP == 1) {
+                if(this.player.diffHP > 0) {
+                    if(this.player.diffHP % 2 != 0) {
                         this['heart' + this.highestHeart.toString()].frame = 1;
                     }
-                    if(this.player.diffHP == 2) {
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 1) {
                         this['heart' + this.highestHeart.toString()].frame = 2;
                     }
                 }
-                if(this.player.diffHP > 2 && this.player.diffHP <= 4) {
-                    if(this.player.diffHP == 3) {
+                if(this.player.diffHP > 2) {
+                    if(this.player.diffHP % 2 != 0) {
                         this['heart' + (this.highestHeart - 1).toString()].frame = 1;
                     }
-                    if(this.player.diffHP == 4) {
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 3) {
                         this['heart' + (this.highestHeart - 1).toString()].frame = 2;
                     }
                 }
-                if(this.player.diffHP > 4 && this.player.diffHP <= 6) {
-                    if(this.player.diffHP == 5) {
+                if(this.player.diffHP > 4) {
+                    if(this.player.diffHP % 2 != 0) {
                         this['heart' + (this.highestHeart - 2).toString()].frame = 1;
                     }
-                    if(this.player.diffHP == 6) {
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 5) {
                         this['heart' + (this.highestHeart - 2).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 6 && this['heart' + (this.highestHeart - 3).toString()] != null) {
+                    if(this.player.diffHP % 2 != 0) {
+                        this['heart' + (this.highestHeart - 3).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 7) {
+                        this['heart' + (this.highestHeart - 3).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 8 && this['heart' + (this.highestHeart - 4).toString()] != null) {
+                    if(this.player.diffHP % 2 != 0) {
+                        this['heart' + (this.highestHeart - 4).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 9) {
+                        this['heart' + (this.highestHeart - 4).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 10 && this['heart' + (this.highestHeart - 5).toString()] != null) {
+                    if(this.player.diffHP % 2 != 0) {
+                        this['heart' + (this.highestHeart - 5).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 11) {
+                        this['heart' + (this.highestHeart - 5).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 12 && this['heart' + (this.highestHeart - 6).toString()] != null) {
+                    if(this.player.diffHP % 2 != 0) {
+                        this['heart' + (this.highestHeart - 6).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 13) {
+                        this['heart' + (this.highestHeart - 6).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 14 && this['heart' + (this.highestHeart - 7).toString()] != null) {
+                    if(this.player.diffHP % 2 != 0) {
+                        this['heart' + (this.highestHeart - 7).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 15) {
+                        this['heart' + (this.highestHeart - 7).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 16 && this['heart' + (this.highestHeart - 8).toString()] != null) {
+                    if(this.player.diffHP % 2 != 0) {
+                        this['heart' + (this.highestHeart - 8).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 17) {
+                        this['heart' + (this.highestHeart - 8).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 18 && this['heart' + (this.highestHeart - 9).toString()] != null) {
+                    if(this.player.diffHP % 2 != 0) {
+                        this['heart' + (this.highestHeart - 9).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP % 2 == 0 || this.player.diffHP > 19) {
+                        this['heart' + (this.highestHeart - 9).toString()].frame = 2;
                     }
                 }
                 if (this.diffHP == this.maxHP) {
