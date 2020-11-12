@@ -54,7 +54,7 @@ steamGame.Game.prototype = {
         this.game.physics.arcade.enable(this.player);
         this.player.body.enbable = true;
         this.player.debug = true;
-        this.playerSpeed = 200;
+        this.playerSpeed = (this.game.world.width / 13.66);
         this.player.body.setSize(12, 22, 10, 6);
         this.player.body.collideWorldBounds = true;
         this.game.camera.follow(this.player, 1);

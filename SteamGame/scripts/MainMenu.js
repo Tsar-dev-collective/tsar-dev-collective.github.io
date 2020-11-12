@@ -14,7 +14,7 @@ steamGame.MainMenu.prototype = {
         this.backBlimp.animations.add('float');
         this.backBlimp.animations.play('float', 8, true);
 
-        this.backBall2 = this.game.add.sprite(155, this.game.world.height, 'menuBall2');
+        this.backBall2 = this.game.add.sprite(160, this.game.world.height, 'menuBall2');
         this.backBall2.anchor.setTo(0, 0.95);
         this.backBall2.scale.setTo(0.2, 0.2);
         this.backBall2.animations.add('float');
@@ -127,7 +127,7 @@ steamGame.MainMenu.prototype = {
 
         if (this.starting != true) {
             if(this['cloud0'].x > 0) {
-                this['cloud0'].x -= 1;
+                this['cloud0'].x -= 1.2;
             } else {
                 var sprites = [0, 1, 2, 3, 4, 5, 6];
                 function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
@@ -145,7 +145,7 @@ steamGame.MainMenu.prototype = {
                 this['cloud1'].frame =  spriteAry();
             }
             if(this['cloud2'].x > 0) {
-                this['cloud2'].x -= 1;
+                this['cloud2'].x -= 0.8;
             } else {
                 var sprites = [0, 1, 2, 3, 4, 5, 6];
                 function spriteAry() { return sprites[Math.floor(Math.random() * sprites.length)]; }
@@ -156,47 +156,49 @@ steamGame.MainMenu.prototype = {
         }
         if (this.starting == true) {
             if(this['cloud0'].x > 0) {
-                this['cloud0'].x -= 1;
-                this['cloud0'].y -= 1.5;
+                this['cloud0'].x -= 1.2;
+                this['cloud0'].y -= 3.2;
             } else {
                 this['cloud0'].destroy();
             }
             if(this['cloud1'].x > 0) {
                 this['cloud1'].x -= 1;
-                this['cloud1'].y -= 1.5;
+                this['cloud1'].y -= 3.2;
             } else {
                 this['cloud1'].destroy();
             }
             if(this['cloud2'].x > 0) {
-                this['cloud2'].x -= 1;
-                this['cloud2'].y -= 1.5;
+                this['cloud2'].x -= 0.8;
+                this['cloud2'].y -= 3.2;
             } else {
                 this['cloud2'].destroy();
             }
             if(this.backBlimp.y + this.backBlimp.height > 0) {
-                this.backBlimp.y -= 1.5;
+                this.backBlimp.y -= 3.2;
             } else {
                 this.backBlimp.destroy();
             }
             if(this.menuBack.y + (this.menuBack.height / 2) > this.game.world.height / 2) {
-                this.backBall1.y -= 1.5;
-                this.backBall2.y -= 1.5;
-                this.menuBack.y -= 1.5;
-                this.menuText1.y -= 1.5;
-                this.menuText2.y -= 1.5;
-                this.menuText3.y -= 1.5;
-                this.menuText4.y -= 1.5;
-                this.menuPointer.y -= 1.5;
+                this.backBall1.y -= 3.9;
+                this.backBall2.y -= 3.9;
+                this.menuBack.y -= 3.9;
+                this.menuText1.y -= 3.9;
+                this.menuText2.y -= 3.9;
+                this.menuText3.y -= 3.9;
+                this.menuText4.y -= 3.9;
+                this.menuPointer.y -= 3.9;
+            } else {
+                this.menuState = true;
             }
-            if(this.menuBGround1.y > this.game.world.height + 2) {
-                this.menuBGround1.y -= 1.5;
+            if(this.menuBGround1.y > this.game.world.height + 4) {
+                this.menuBGround1.y -= 4.2;
             } else {
                 if((Math.floor(Math.random() * 600) < 5) && (this.menuBGround1.animations.isPlaying != true)) {
                     this.menuBGround1.animations.play('zap', 10, false);
                 }
             }
             if(this.menuBGround2.y > this.game.world.height + 2) {
-                this.menuBGround2.y -= 1.5;
+                this.menuBGround2.y -= 4.2;
             } else if (this.menuBGround2.y <= this.game.world.height + 2) {
                 this.menuState = true;
             }
@@ -204,18 +206,18 @@ steamGame.MainMenu.prototype = {
                 this.startText.destroy();
             }
             if(this.titlePart0.y + 600 > 0) {
-                this.titlePart0.y -= 1.5;
-                this.titlePart1.y -= 1.5;
-                this.titlePart2.y -= 1.5;
-                this.titlePart3.y -= 1.5;
-                this.titlePart4.y -= 1.5;
-                this.titlePart5.y -= 1.5;
-                this.titlePart6.y -= 1.5;
-                this.titlePart7.y -= 1.5;
-                this.titlePart8.y -= 1.5;
-                this.titlePart9.y -= 1.5;
-                this.titlePart10.y -= 1.5;
-                this.titlePart11.y -= 1.5;
+                this.titlePart0.y -= 2.5;
+                this.titlePart1.y -= 2.5;
+                this.titlePart2.y -= 2.5;
+                this.titlePart3.y -= 2.5;
+                this.titlePart4.y -= 2.5;
+                this.titlePart5.y -= 2.5;
+                this.titlePart6.y -= 2.5;
+                this.titlePart7.y -= 2.5;
+                this.titlePart8.y -= 2.5;
+                this.titlePart9.y -= 2.5;
+                this.titlePart10.y -= 2.5;
+                this.titlePart11.y -= 2.5;
             } else {
                 this.titlePart0.destroy();
                 this.titlePart1.destroy();
