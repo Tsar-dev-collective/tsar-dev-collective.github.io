@@ -87,13 +87,12 @@ steamGame.Game.prototype = {
 
     },
     update: function(){
-        //functions for collisions
-        this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
-        this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
+        /***************************************** Collision handler for player vs. layers and debug text ***************************************************************/
+        //this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
+        //this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
         this.game.physics.arcade.collide(this.player, this.wall, this.mapHurt);
-        this.player.body.onCollide
         if (this.menuState == 0) {
-            //health checker
+            /***************************************** Player HP manager ******************************************************************************************/
             if (this.player.currentHP < this.player.maxHP) {
                 this.player.diffHP = this.player.maxHP - this.player.currentHP;
                 if(this.player.diffHP > 0) {
@@ -182,7 +181,7 @@ steamGame.Game.prototype = {
             }
 
 
-            //I know this kind of movement tracking has fatal flaws, I don't care, it works
+            /***************************************** Player Movement Handling ******************************************************************************************/
             this.player.body.velocity.x = 0;
             this.player.body.velocity.y = 0;
             if (upKey.isDown || upArrow.isDown) {
@@ -196,7 +195,7 @@ steamGame.Game.prototype = {
                 this.player.body.velocity.x = -this.player.speed;
             }
 
-            //animation checker for player
+            /************************************** Animation Controller for Player movement *****************************************************************************/
             this.animationName = "stopped";
             this.direction = this.direction || 'down';
             if (this.player.body.velocity.x < 0) {
@@ -221,7 +220,7 @@ steamGame.Game.prototype = {
                 this.animationName = 'runDown';
                 this.direction = 'down'
             }
-            //player animator
+            //change current animation
             if (this.player.animations.name !== this.animationName && this.animationName !== 'stopped') {
                 this.player.animations.play(this.animationName, 4, true);
             } else if (this.animationName == 'stopped') {
