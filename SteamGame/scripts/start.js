@@ -15,7 +15,7 @@ steamGame.game.state.add('Boot', steamGame.Boot);
 steamGame.game.state.add('Preload', steamGame.Preload);
 steamGame.game.state.add('MainMenu', steamGame.MainMenu);
 //steamGame.game.state.add('Saves', steamGame.Saves);
-steamGame.game.state.add('Game', steamGame.Game);
+steamGame.game.state.add('Berlin0', steamGame.Berlin0);
 
 //running the first state in the sequence
 steamGame.game.state.start('Boot');
