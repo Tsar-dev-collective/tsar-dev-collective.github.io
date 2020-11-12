@@ -35,8 +35,6 @@ steamGame.Game.prototype = {
 
         //menustate declarations
         this.menuState = 0;
-        //ui declaration
-        this.hp = 6;
 
         //set scene boundary
         //this.game.world.setBounds(0, 0, this.game.world.width, this.game.world.height);
@@ -56,43 +54,90 @@ steamGame.Game.prototype = {
         this.game.physics.arcade.enable(this.player);
         this.player.body.enbable = true;
         this.player.debug = true;
-        this.playerSpeed = (this.game.world.width / 13.66);
+        this.player.speed = (this.game.world.width / 13.66);
         this.player.body.setSize(12, 22, 10, 6);
         this.player.body.collideWorldBounds = true;
         this.game.camera.follow(this.player, 1);
+
+        //ui declaration
+        this.player.maxHP = 6;
+        this.player.currentHP = 6;
+
+        this.player.timer = 75;
+
         //Heart declaration
-         for (i = 0; i < (this.hp/2); i++) {
-            this.hPosX = 0;
-            this.hSpawn;
-            if(this['heart' + (i-1).toString()] != null){
-                this.hPosX = i; 
-            }
-            if(this.hPosX > 0){
-                this.hSpawn = this['heart' + (i - 1).toString()].width + this['heart' + (i - 1).toString()].x - 5;
-            } else {
-                this.hSpawn = 0;
-            }
-            this['heart' + i.toString()] = this.game.add.sprite(this.hSpawn + 5, 10 , 'heart');
-            this['heart' + i.toString()].fixedToCamera = true;
-            this['heart' + i.toString()].scale.setTo (this.scalingFactor*0.75,this.scalingFactor*0.75)
-         }
+        for (i = 0; i < (this.player.maxHP/2); i++) {
+           this.hPosX = 0;
+           this.hSpawn;
+           if(this['heart' + (i-1).toString()] != null){
+               this.hPosX = i; 
+           }
+           if(this.hPosX > 0){
+               this.hSpawn = this['heart' + (i - 1).toString()].width + this['heart' + (i - 1).toString()].x - 5;
+           } else {
+               this.hSpawn = 0;
+           }
+           this['heart' + i.toString()] = this.game.add.sprite(this.hSpawn + 5, 10 , 'heart');
+           this['heart' + i.toString()].fixedToCamera = true;
+           this['heart' + i.toString()].scale.setTo (this.scalingFactor*0.75,this.scalingFactor*0.75)
+           this.highestHeart = i;
+        }
+
+        
 
     },
     update: function(){
-        this.game.physics.arcade.collide(this.player, this.wall);
+        //functions for collisions
+        this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
+        this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
+        this.game.physics.arcade.collide(this.player, this.wall, this.mapHurt);
+        this.player.body.onCollide
         if (this.menuState == 0) {
+            //health checker
+            if (this.player.currentHP < this.player.maxHP) {
+                this.player.diffHP = this.player.maxHP - this.player.currentHP;
+                if(this.player.diffHP <= 2) {
+                    if(this.player.diffHP == 1) {
+                        this['heart' + this.highestHeart.toString()].frame = 1;
+                    }
+                    if(this.player.diffHP == 2) {
+                        this['heart' + this.highestHeart.toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 2 && this.player.diffHP <= 4) {
+                    if(this.player.diffHP == 3) {
+                        this['heart' + (this.highestHeart - 1).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP == 4) {
+                        this['heart' + (this.highestHeart - 1).toString()].frame = 2;
+                    }
+                }
+                if(this.player.diffHP > 4 && this.player.diffHP <= 6) {
+                    if(this.player.diffHP == 5) {
+                        this['heart' + (this.highestHeart - 2).toString()].frame = 1;
+                    }
+                    if(this.player.diffHP == 6) {
+                        this['heart' + (this.highestHeart - 2).toString()].frame = 2;
+                    }
+                }
+                if (this.diffHP == this.maxHP) {
+                    //game over script
+                }
+            }
+
+
             //I know this kind of movement tracking has fatal flaws, I don't care, it works
             this.player.body.velocity.x = 0;
             this.player.body.velocity.y = 0;
             if (upKey.isDown || upArrow.isDown) {
-                this.player.body.velocity.y = -this.playerSpeed;
+                this.player.body.velocity.y = -this.player.speed;
             } else if (downKey.isDown || downArrow.isDown) {
-                this.player.body.velocity.y = this.playerSpeed;
+                this.player.body.velocity.y = this.player.speed;
             }
             if (rightKey.isDown || rightArrow.isDown) {
-                this.player.body.velocity.x = this.playerSpeed;
+                this.player.body.velocity.x = this.player.speed;
             } else if (leftKey.isDown || leftArrow.isDown) {
-                this.player.body.velocity.x = -this.playerSpeed;
+                this.player.body.velocity.x = -this.player.speed;
             }
 
             //animation checker for player
@@ -143,6 +188,13 @@ steamGame.Game.prototype = {
                     this.player.animations.play('idleLeft', 4, true);
                 }
             }
+        }
+    },
+    mapHurt: function(player, walls) {
+        player.timer += 1;
+        if(player.timer === 100) {
+            player.timer = 0;
+            player.currentHP -= 1;
         }
     }
 };
