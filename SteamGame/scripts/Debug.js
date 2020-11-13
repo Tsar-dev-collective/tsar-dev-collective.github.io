@@ -66,9 +66,9 @@ steamGame.Game.prototype = {
         this.game.camera.follow(this.player, 1);
 
         //ui declaration
-        this.player.maxHP = this.maxHP;
+        this.player.maxHP = this.maxHP || 6;
         this.player.currentHP = this.player.maxHP;
-        this.player.maxSteam = this.maxSteam;
+        this.player.maxSteam = this.maxSteam || 100;
         this.player.currentSteam = this.currentSteam || this.maxSteam;
 
         this.player.timer = 75;
