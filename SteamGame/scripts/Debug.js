@@ -67,9 +67,9 @@ steamGame.Game.prototype = {
 
         //ui declaration
         this.player.maxHP = this.maxHP || 6;
-        this.player.currentHP = this.player.maxHP;
+        this.player.currentHP = this.currentHP || this.player.maxHP;
         this.player.maxSteam = this.maxSteam || 100;
-        this.player.currentSteam = this.currentSteam || this.maxSteam;
+        this.player.currentSteam = this.currentSteam || this.player.maxSteam;
 
         this.player.timer = 75;
         this.player.newSLevel = 0;
