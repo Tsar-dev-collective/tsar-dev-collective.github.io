@@ -66,10 +66,13 @@ steamGame.Game.prototype = {
         this.game.camera.follow(this.player, 1);
 
         //ui declaration
-        this.player.maxHP = this.maxHP || 6;
-        this.player.currentHP = this.currentHP || this.player.maxHP;
-        this.player.maxSteam = this.maxSteam || 100;
-        this.player.currentSteam = this.currentSteam || this.player.maxSteam;
+        this.player.maxHP = this.playerData.maxHP || 6;
+        this.player.currentHP = this.playerData.currentHP || this.player.maxHP;
+        this.player.maxSteam = this.playerData.maxSteam || 100;
+        this.player.currentSteam = this.playerData.currentSteam || this.player.maxSteam;
+        this.player.maxEnergy = this.playerData.maxEnergy || 100;
+        this.player.currentEnergy = this.playerData.currentEnergy || this.player.maxEnergy;
+        this.player.currency = this.playerData.currency || 0;
 
         this.player.timer = 75;
         this.player.newSLevel = 0;
@@ -112,10 +115,12 @@ steamGame.Game.prototype = {
         /***************************************** Collision handler for player vs. layers and debug text ***************************************************************/
         
         if (debugKey.isDown) {
-            this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
-            this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
-            this.game.debug.text(this.player.currentSteam, this.game.world.centerX, 30, null, 'rgb(0, 0, 0)');
-            this.game.debug.text(this.player.newSLevel, this.game.world.centerX, 40, null, 'rgb(0, 0, 0)');
+            this.game.debug.text('True health: ' + this.player.currentHP, this.game.world.centerX - 150, this.game.camera.height - 150, null, 'rgb(0, 0, 0)');
+            this.game.debug.text('Health collision timer: ' + this.player.timer, this.game.world.centerX - 150, this.game.camera.height - 135, null, 'rgb(0, 0, 0)');
+            this.game.debug.text('True steam level: ' + this.player.currentSteam, this.game.world.centerX - 150, this.game.camera.height - 120, null, 'rgb(0, 0, 0)');
+            this.game.debug.text('Steam counter timer:' + this.player.newSLevel, this.game.world.centerX - 150, this.game.camera.height - 105, null, 'rgb(0, 0, 0)');
+            this.game.debug.text('True energy: ' + this.player.currentEnergy, this.game.world.centerX - 150, this.game.camera.height - 90, null, 'rgb(0, 0, 0)');
+            this.game.debug.text('Currency: ' + this.player.currency, this.game.world.centerX - 150, this.game.camera.height - 75, null, 'rgb(0, 0, 0)');
         }
 
         //this.game.physics.arcade.collide(this.player, this.wall, this.debugHurt);

@@ -122,9 +122,18 @@ steamGame.MainMenu.prototype = {
         }
         //debugkey handler
         if (skipKey.isDown) {
-            this.game.state.states['Debug'].maxHP = 6;
-            this.game.state.states['Debug'].maxSteam = 100;
-            //this.game.state.states['Debug'].currentSteam = 69;
+            this.game.state.states['Debug'].playerData = {
+                maxHP: 6,
+                //currentHP: ,
+                maxSteam: 100,
+                //currentSteam: ,
+                maxEnergy: 100,
+                //currentEnergy: ,
+                currency: 0,
+                ability: '',
+                dash: false,
+                //add more things in the future
+            };
             this.game.state.start('Debug');
         }
 
@@ -281,12 +290,34 @@ steamGame.MainMenu.prototype = {
                 this.menuPointer.y = this.menuText2.y
                 if (enterKey.isDown) {
                     //enter default save state loading later, for now just start game
-                    this.game.state.states['Debug'].maxHP = 6;
+                    this.game.state.states['Debug'].playerData = {
+                        maxHP: 6,
+                        //currentHP: ,
+                        maxSteam: 100,
+                        //currentSteam: ,
+                        maxEnergy: 100,
+                        //currentEnergy: ,
+                        currency: 0,
+                        ability: '',
+                        dash: false,
+                        //add more things in the future
+                    };
                     this.game.state.start('Debug');
                 }
                 if (space.isDown) {
                     //enter default save state loading later, for now just start game
-                    this.game.state.states['Debug'].maxHP = 6;
+                    this.game.state.states['Debug'].playerData = {
+                        maxHP: 6,
+                        //currentHP: ,
+                        maxSteam: 100,
+                        //currentSteam: ,
+                        maxEnergy: 100,
+                        //currentEnergy: ,
+                        currency: 0,
+                        ability: '',
+                        dash: false,
+                        //add more things in the future
+                    };
                     this.game.state.start('Debug');
                 }
             }
