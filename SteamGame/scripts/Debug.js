@@ -88,22 +88,22 @@ steamGame.Game.prototype = {
            }
            this['heart' + i.toString()] = this.game.add.sprite(this.hSpawn + 5, 10 , 'heart');
            this['heart' + i.toString()].fixedToCamera = true;
-           this['heart' + i.toString()].scale.setTo (this.scalingFactor*0.75,this.scalingFactor*0.75)
+           this['heart' + i.toString()].scale.setTo (this.scalingFactor*0.65,this.scalingFactor*0.65)
            this.highestHeart = i;
         }
 
         //steam meter declaration
-        this.steamMeter = this.game.add.sprite(5, (this.heart0.y + (this.heart0.height * 4) + 5), 'steamMeter');
+        this.steamMeter = this.game.add.sprite(3, (this.heart0.y + (this.heart0.height * 4) + 5), 'steamMeter');
         this.steamMeter.frame = 0;
         this.steamMeter.fixedToCamera = true;
         this.steamMeter.anchor.setTo(0, 1);
-        this.steamMeter.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * 0.75);
+        this.steamMeter.scale.setTo(this.scalingFactor * 0.65, this.scalingFactor * 0.65);
 
-        this.steamLevel = this.game.add.sprite(5, (this.heart0.y + (this.heart0.height * 4) - (8 * (this.scalingFactor * 0.75))), 'steamMeter');
+        this.steamLevel = this.game.add.sprite(3, (this.heart0.y + (this.heart0.height * 4) - (8 * (this.scalingFactor * 0.65))), 'steamMeter');
         this.steamLevel.frame = 1;
         this.steamLevel.fixedToCamera = true;
         this.steamLevel.anchor.setTo(0, 86/96);
-        this.steamLevel.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * 0.75);
+        this.steamLevel.scale.setTo(this.scalingFactor * 0.65, this.scalingFactor * 0.65);
 
         
 
@@ -212,10 +212,10 @@ steamGame.Game.prototype = {
             /***************************************** Player Steam Handler **********************************************************************************************/
             if (this.player.currentSteam < this.player.maxSteam) {
                 this.diffSteam = this.player.currentSteam / this.player.maxSteam;
-                this.steamLevel.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * (0.75 * this.diffSteam));
-                this.steamLevel.y += this.diffSteam * this.scalingFactor * 0.75
+                this.steamLevel.scale.setTo(this.scalingFactor * 0.65, this.scalingFactor * (0.65 * this.diffSteam));
+                this.steamLevel.y += this.diffSteam * this.scalingFactor * 0.65
             } else {
-                this.steamLevel.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * 0.75);
+                this.steamLevel.scale.setTo(this.scalingFactor * 0.65, this.scalingFactor * 0.65);
             }
 
 
