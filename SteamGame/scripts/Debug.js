@@ -108,6 +108,19 @@ steamGame.Game.prototype = {
         this.steamLevel.anchor.setTo(0, 86/96);
         this.steamLevel.scale.setTo(this.scalingFactor * 0.65, this.scalingFactor * 0.65);
 
+        //Elec Meter declaration
+        this.elecMeter = this.game.add.sprite(this.steamMeter.x + this.steamMeter.width, (this.heart0.y + (this.heart0.height * 4) + 5), 'elecMeter');
+        this.elecMeter.frame = 0;
+        this.elecMeter.fixedToCamera = true;
+        this.elecMeter.anchor.setTo(0, 1);
+        this.elecMeter.scale.setTo(this.scalingFactor * 0.65, this.scalingFactor * 0.65);
+
+        this.elecLevel = this.game.add.sprite(this.steamMeter.x + this.steamMeter.width, (this.heart0.y + (this.heart0.height * 4) - (8 * (this.scalingFactor * 0.65))), 'elecMeter');
+        this.elecLevel.frame = 1;
+        this.elecLevel.fixedToCamera = true;
+        this.elecLevel.anchor.setTo(0, 86/96);
+        this.elecLevel.scale.setTo(this.scalingFactor * 0.65, this.scalingFactor * 0.65);
+
         
 
     },
