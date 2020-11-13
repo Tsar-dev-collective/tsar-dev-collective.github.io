@@ -122,7 +122,8 @@ steamGame.MainMenu.prototype = {
         }
         //debugkey handler
         if (skipKey.isDown) {
-            this.game.state.start('Berlin0');
+            this.game.state.states['Debug'].maxHP = 6;
+            this.game.state.start('Debug');
         }
 
         if (this.starting != true) {
@@ -278,11 +279,13 @@ steamGame.MainMenu.prototype = {
                 this.menuPointer.y = this.menuText2.y
                 if (enterKey.isDown) {
                     //enter default save state loading later, for now just start game
-                    this.game.state.start('Berlin0');
+                    this.game.state.states['Debug'].maxHP = 6;
+                    this.game.state.start('Debug');
                 }
                 if (space.isDown) {
                     //enter default save state loading later, for now just start game
-                    this.game.state.start('Berlin0');
+                    this.game.state.states['Debug'].maxHP = 6;
+                    this.game.state.start('Debug');
                 }
             }
             else if (this.pointerPos == 1) {

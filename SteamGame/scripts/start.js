@@ -15,7 +15,7 @@ steamGame.game.state.add('Boot', steamGame.Boot);
 steamGame.game.state.add('Preload', steamGame.Preload);
 steamGame.game.state.add('MainMenu', steamGame.MainMenu);
 //steamGame.game.state.add('Saves', steamGame.Saves);
-steamGame.game.state.add('Berlin0', steamGame.Game); // initial Berlin scene with berlin under attack
+steamGame.game.state.add('Debug', steamGame.Game); // initial Berlin scene with berlin under attack
 
 //running the first state in the sequence
 steamGame.game.state.start('Boot');

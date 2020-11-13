@@ -32,7 +32,8 @@ steamGame.Preload.prototype = {
         this.load.atlasJSONHash('protest', 'sprites/game/testingProtag.png', 'sprites/game/testingProtag.json');
             this.load.image('debugTiles', 'sprites/game/testTiles.png');
         this.load.tilemap('debugMap', 'maps/debugMap.json', null, Phaser.Tilemap.TILED_JSON);
-        this.load.atlasJSONHash('heart', 'sprites/game/heart.png', 'sprites/game/heart.json');
+            this.load.atlasJSONHash('heart', 'sprites/game/heart.png', 'sprites/game/heart.json');
+        this.load.atlasJSONHash('steamMeter', 'sprites/game/steamMeter.png', 'sprites/game/steamMeter.json');
     },
     create: function() {
         this.state.start('MainMenu');

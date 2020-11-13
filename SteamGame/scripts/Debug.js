@@ -3,6 +3,11 @@ var steamGame = steamGame || {}
 steamGame.Game = function(){}
 
 steamGame.Game.prototype = {
+    /*init: function(startingHP) {
+        this.player = this.player || {};
+        this.player.maxHP = startingHP;
+    },*/
+
     create: function(){
 
         //movement 
@@ -61,8 +66,8 @@ steamGame.Game.prototype = {
         this.game.camera.follow(this.player, 1);
 
         //ui declaration
-        this.player.maxHP = 6;
-        this.player.currentHP = 6;
+        this.player.maxHP = this.maxHP;
+        this.player.currentHP = this.player.maxHP;
 
         this.player.timer = 75;
 
@@ -91,8 +96,8 @@ steamGame.Game.prototype = {
         /***************************************** Collision handler for player vs. layers and debug text ***************************************************************/
         
         if (debugKey.isDown) {
-            //this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
-            //this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
+            this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
+            this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
         }
 
         this.game.physics.arcade.collide(this.player, this.wall, this.mapHurt);
