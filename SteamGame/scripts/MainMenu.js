@@ -123,6 +123,8 @@ steamGame.MainMenu.prototype = {
         //debugkey handler
         if (skipKey.isDown) {
             this.game.state.states['Debug'].maxHP = 6;
+            this.game.state.states['Debug'].maxSteam = 100;
+            //this.game.state.states['Debug'].currentSteam = 69;
             this.game.state.start('Debug');
         }
 

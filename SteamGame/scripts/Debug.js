@@ -68,8 +68,11 @@ steamGame.Game.prototype = {
         //ui declaration
         this.player.maxHP = this.maxHP;
         this.player.currentHP = this.player.maxHP;
+        this.player.maxSteam = this.maxSteam;
+        this.player.currentSteam = this.currentSteam || this.maxSteam;
 
         this.player.timer = 75;
+        this.player.newSLevel = 0;
 
         //Heart declaration
         for (i = 0; i < (this.player.maxHP/2); i++) {
@@ -89,6 +92,19 @@ steamGame.Game.prototype = {
            this.highestHeart = i;
         }
 
+        //steam meter declaration
+        this.steamMeter = this.game.add.sprite(5, (this.heart0.y + (this.heart0.height * 4) + 5), 'steamMeter');
+        this.steamMeter.frame = 0;
+        this.steamMeter.fixedToCamera = true;
+        this.steamMeter.anchor.setTo(0, 1);
+        this.steamMeter.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * 0.75);
+
+        this.steamLevel = this.game.add.sprite(5, (this.heart0.y + (this.heart0.height * 4) - (8 * (this.scalingFactor * 0.75))), 'steamMeter');
+        this.steamLevel.frame = 1;
+        this.steamLevel.fixedToCamera = true;
+        this.steamLevel.anchor.setTo(0, 86/96);
+        this.steamLevel.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * 0.75);
+
         
 
     },
@@ -98,9 +114,12 @@ steamGame.Game.prototype = {
         if (debugKey.isDown) {
             this.game.debug.text(this.player.currentHP, this.game.world.centerX, 10, null, 'rgb(0, 0, 0)');
             this.game.debug.text(this.player.timer, this.game.world.centerX, 20, null, 'rgb(0, 0, 0)');
+            this.game.debug.text(this.player.currentSteam, this.game.world.centerX, 30, null, 'rgb(0, 0, 0)');
+            this.game.debug.text(this.player.newSLevel, this.game.world.centerX, 40, null, 'rgb(0, 0, 0)');
         }
 
-        this.game.physics.arcade.collide(this.player, this.wall, this.mapHurt);
+        //this.game.physics.arcade.collide(this.player, this.wall, this.debugHurt);
+        this.game.physics.arcade.collide(this.player, this.wall, this.debugSteam);
         if (this.menuState == 0) {
             /***************************************** Player HP manager ******************************************************************************************/
             if (this.player.currentHP < this.player.maxHP) {
@@ -190,6 +209,15 @@ steamGame.Game.prototype = {
                 }
             }
 
+            /***************************************** Player Steam Handler **********************************************************************************************/
+            if (this.player.currentSteam < this.player.maxSteam) {
+                this.diffSteam = this.player.currentSteam / this.player.maxSteam;
+                this.steamLevel.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * (0.75 * this.diffSteam));
+                this.steamLevel.y += this.diffSteam * this.scalingFactor * 0.75
+            } else {
+                this.steamLevel.scale.setTo(this.scalingFactor * 0.75, this.scalingFactor * 0.75);
+            }
+
 
             /***************************************** Player Movement Handling ******************************************************************************************/
             this.player.body.velocity.x = 0;
@@ -255,11 +283,27 @@ steamGame.Game.prototype = {
             }
         }
     },
-    mapHurt: function(player, walls) {
+    debugHurt: function(player, walls) {
         player.timer += 1;
         if(player.timer === 100) {
             player.timer = 0;
             player.currentHP -= 1;
+        }
+    },
+    debugSteam: function(player, walls) {
+        /*if (player.currentSteam < player.maxSteam) {
+            player.newSLevel += 0.1;
+            if (player.newSLevel >= 1) {
+                player.currentSteam ++;
+                player.newSLevel = 0;
+            }
+        }*/
+        if (player.currentSteam > 0) {
+            player.newSLevel -= 0.1;
+            if (player.newSLevel <= -1) {
+                player.currentSteam --;
+                player.newSLevel = 0;
+            }
         }
     }
 };
