@@ -13,8 +13,8 @@ a:hover {
 body {
     font-family: 'arcadeclassicregular';
     word-spacing: 10px;
-    background-image: linear-gradient(white, black);
-    height: 100%;
+    background-image: linear-gradient(white, white, black);
+    background-size: 100% 400%;
 }
 
 a:hover {
