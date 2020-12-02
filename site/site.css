@@ -17,8 +17,12 @@ body {
 }
 
 html {
-    background-image: linear-gradient(white, white, black, black);
-    background-size: device-width device-height;
+    height: 100%;
+    background: linear-gradient(white, white, white, black, black);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-y: hidden;
 }
 
 a:hover {
@@ -28,4 +32,19 @@ a:hover {
 
 .link {
     color: black;
+}
+#milutin {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    bottom: 1%;
+    left: 1%;
+}
+
+#solaris {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    bottom: 1%;
+    left: 13%;
 }
