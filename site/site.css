@@ -14,6 +14,9 @@ body {
     font-family: 'arcadeclassicregular';
     word-spacing: 10px;
     height: 100%;
+}
+
+html {
     background-image: linear-gradient(white, white, black, black);
     background-size: 100% 100%;
 }
