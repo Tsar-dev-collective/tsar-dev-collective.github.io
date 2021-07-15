@@ -69,6 +69,24 @@ body {
     background-size: 100% 100%;
 }
 
+.projectLink {
+    width: 32%;
+    height: 8%;
+    top: 39%;
+    left: 0%;
+    position: absolute;
+    z-index: 1;
+}
+
+.projectLink:hover {
+    top: 38.5%;
+    left: -4%;
+    height: 9%;
+    width: 34%;
+    position: absolute;
+    z-index: 2;
+}
+
 
 
 .Title {
