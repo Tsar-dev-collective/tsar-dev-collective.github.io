@@ -133,7 +133,7 @@ p {
 }
 
 #story {
-    max-height: 40%; /* a x number of line to show (ex : 2 line)  */
+    max-height: 28%; /* a x number of line to show (ex : 2 line)  */
     overflow:auto
 }
 
