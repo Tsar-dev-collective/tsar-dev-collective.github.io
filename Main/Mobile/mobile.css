@@ -1,0 +1,147 @@
+body {
+    overflow-x: hidden;
+}
+
+#slate {
+    background: linear-gradient(160deg, rgb(98, 107, 107),rgb(43, 60, 68));
+    height: 130%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+#mainBack {
+    height: 500%;
+    width: 80%;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+
+    display: flexbox;
+
+    background: linear-gradient(180deg, rgb(48, 48, 48),rgb(0, 0, 0));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#mainText {
+    height: 80%;
+    width: 90%;
+    left: 5%;
+    top : 5%;
+    /*background-color: white;*/
+    position: absolute;
+}
+
+#LogoBack {
+    width: 50%;
+    height: 0;
+    padding-bottom: 50%;
+    background-color: black;
+    border-radius: 180px;
+    position: absolute;
+
+    top: -3.5%;
+    left: 25%;
+}
+
+#TsarLogo {
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+}
+
+#contactBack {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 540%;
+    left: 0%;
+
+    background: linear-gradient(180deg, rgb(32, 32, 32), rgb(48, 48, 48));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.projectLink {
+    width: 100%;
+    height: 70%;
+    margin-top: 0%;
+    margin-left: 0%;
+    /*position: absolute;*/
+    position: static;
+    z-index: 1;
+    display:inline-block;
+}
+
+.projectBack {
+    width: 100%;
+    height: 100%;
+    position: static;
+    display: inline-block;
+    margin-top: -100%;
+    z-index: -1;
+    background: linear-gradient(0deg, rgb(0, 0, 0), rgba(255, 255, 255, 0));
+}
+
+.projectLink:hover {
+    height: 72%;
+    width: 34%;
+    /*position: absolute;*/
+    position: static;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#projectImage {
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.Title {
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 4px 4px 5px black;
+}
+
+.heading {
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+p {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+
+#story {
+    max-height: 40%; /* a x number of line to show (ex : 2 line)  */
+    overflow:auto
+}
+
+a {
+    color: white;
+}
+
+.bottomLink {
+    color: rgb(146, 146, 146);
+    cursor: pointer;
+}
