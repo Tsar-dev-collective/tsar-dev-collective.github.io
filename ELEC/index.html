@@ -5,8 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELEC Home</title>
+    <link rel="icon" href="images/wheel.png" type="image/png">
+
+    <!--<script type="text/javascript" src="Main/scripts/index.js"></script>-->
+    <link rel=stylesheet href="index.css" type="text/css" />
+    <meta name="google-site-verification" content="L26aS2WVFYzd-qJPusW-5cuUba2_6SZXx_c199okr50" />
 </head>
 <body>
+    <div id="bg"></div>
+    <div id="bgOverlay"></div>
+
+    <div id="mainBack">
+        <div id="logo" style="background-image: url('images/Logo.png');"></div>
+
+        <div id="retailContainer">
+            <div id="steam" data-active="false" class="retailLink" onclick="window.location.href = ''" style="cursor: pointer; margin-left: 0.25%;">
+                <img id="retailImage" src="../logos/Steam.png">
+            </div>
+            <div id="oculus" data-active="false" class="retailLink" onclick="window.location.href = ''" style="cursor: pointer; margin-left: 0%;">
+                <!--<img id="retailImage" src="../logos/Steam.png">-->
+            </div>
+            <div id="quest" data-active="false" class="retailLink" onclick="window.location.href = ''" style="cursor: pointer; margin-left: 0%;">
+                <!--<img id="retailImage" src="../logos/Steam.png">-->
+            </div>
+            <div id="blank" data-active="false" class="retailLink" onclick="window.location.href = ''" style="cursor: pointer; margin-left: 0%;">
+                <!--<img id="retailImage" src="../logos/Steam.png">-->
+            </div>
+        </div>
+
+        <div id="carouselBlock" style ="margin-left: 5%; margin-top: 2%;">
+            <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube-nocookie.com/embed/tBfdkjqWVAk" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+            </iframe>
+        </div>
+    </div>
     
+
+
+
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "101306862251793");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v11.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
+
+<script>
+    var retailLinks = document.getElementsByClassName("retailLink");
+    
+    for(var i = 0; i < retailLinks.length; i++) {
+        if (retailLinks[i].getAttribute("data-active") != "true") {
+            console.log("disabled");
+        }
+    }
+</script>
 </html>
