@@ -20,11 +20,11 @@
     <div id="bgOverlay"></div>
 
     <div id="mainBack">
-        <div id="logo" style="background-image: url('images/Logo.png');"></div>
+        <div id="logo" style="background-image: url('../images/Logo.png');"></div>
 
         <div id="retailContainer">
             <div id="steam" data-active="false" class="retailLink" onclick="window.location.href = 'https:\/\/store.steampowered.com/app/1709150/ELEC/'" style="cursor: pointer; margin-left: 0.25%;">
-                <img id="retailImage" src="../logos/Steam.png">
+                <img id="retailImage" src="../../logos/Steam.png">
             </div>
             <div id="oculus" data-active="false" class="retailLink" onclick="window.location.href = ''" style="cursor: pointer; margin-left: 0%;">
                 <!--<img id="retailImage" src="../logos/Steam.png">-->
@@ -33,7 +33,7 @@
                 <!--<img id="retailImage" src="../logos/Steam.png">-->
             </div>
             <div id="kickstarter" data-active="false" class="retailLink" onclick="window.location.href = 'https:\/\/www.kickstarter.com/projects/1421609555/elec'" style="cursor: pointer; margin-left: 0%;">
-                <img id="retailImage" src="../logos/Kickstarter.png">
+                <img id="retailImage" src="../../logos/Kickstarter.png">
             </div>
         </div>
 
@@ -65,27 +65,27 @@
                 </div>
 
                 <div class="item"style="width:100%;height:100%;">
-                    <img src="images/Cabinet.png" style="width:100%;height:100%;">
+                    <img src="../images/Cabinet.png" style="width:100%;height:100%;">
                 </div>
 
                 <div class="item"style="width:100%;height:100%;">
-                    <img src="images/Helmets.png" style="width:100%;height:100%;">
+                    <img src="../images/Helmets.png" style="width:100%;height:100%;">
                 </div>
 
                 <div class="item"style="width:100%;height:100%;">
-                    <img src="images/Respawn.png" style="width:100%;height:100%;">
+                    <img src="../images/Respawn.png" style="width:100%;height:100%;">
                 </div>
 
                 <div class="item"style="width:100%;height:100%;">
-                    <img src="images/Incoming.png" style="width:100%;height:100%;">
+                    <img src="../images/Incoming.png" style="width:100%;height:100%;">
                 </div>
 
                 <div class="item"style="width:100%;height:100%;">
-                    <img src="images/HeadOn.png" style="width:100%;height:100%;">
+                    <img src="../images/HeadOn.png" style="width:100%;height:100%;">
                 </div>
 
                 <div class="item"style="width:100%;height:100%;">
-                    <img src="images/CommonOccurrence.png" style="width:100%;height:100%;">
+                    <img src="../images/CommonOccurrence.png" style="width:100%;height:100%;">
                 </div>
 
                 <!-- Left and right controls -->
@@ -214,9 +214,9 @@
 
     console.log(window.innerWidth);
 
-    if (window.innerWidth <= 1080) {
-        window.location.href = "Mobile/index.html";
-        console.log("mobile user");
+    if (window.innerWidth > 1080) {
+        window.location.href = "../index.html";
+        console.log("pc user");
     }
 </script>
 </html>

@@ -10,15 +10,15 @@ body {
 }
 
 #bg {
-    background-image: url("images/bg.png");
+    background-image: url("../images/bg.png");
     height: 100%;
-    width: 100%;
+    width: 150%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: fixed;
     top: 0%;
-    left: 0%;
+    right: 0%;
 }
 
 #bgOverlay {
@@ -34,7 +34,7 @@ body {
 }
 
 #mainBack {
-    height: 300%;
+    height: 220%;
     width: 60%;
     position: absolute;
     top: 5%;
