@@ -1,0 +1,473 @@
+/* Reset Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    font-size: 1em;
+    background-color: #292929;
+  }
+  
+  a {
+    color: #f8fcff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  h1, h2, h3, h4 {
+    margin: 1em 0;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+
+
+  
+/* Header Styles */
+header {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column; /* changed from row */
+  align-items: center;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row; /* changed from column */
+  margin: 0; /* remove default margin */
+  padding: 0; /* remove default padding */
+  width: 100%;
+}
+
+nav li {
+  margin-left: 20px;
+  list-style: none; /* remove default bullet points */
+}
+
+nav a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #292929;
+  margin: 0;
+}
+
+
+  /* Hero Styles */
+  .hero {
+    /*background-color: white;*/
+    width: 100%;
+    background-image: url('/Images/Tsar-Dev-siteBannerx2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    padding: 9.5% 50%;
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+
+
+
+
+
+
+
+  
+ /* Featured Games Styles */
+ .featured-games {
+  padding: 4vh 2vw;
+  color: #fff;
+}
+
+.featured-games h3 {
+  text-align: center;
+  margin-bottom: 2vh;
+  font-size: 4vw;
+}
+
+.featured-games ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.featured-games li {
+  margin-top: 1vh;
+  width: calc(33.33% - 2vw);
+}
+
+.featured-games li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.featured-games li h5 {
+  margin-bottom: 0;
+  font-size: 3vw;
+  position: absolute;
+  bottom: 0;
+  left: 2vw;
+  transform: translateY(19.4vw) translateX(1vw);
+  
+}
+
+.featured-games li p {
+  background-color: #f1f1f1;
+  font-size: 2vw;
+  padding: 2vh;
+}
+
+.text-container {
+  margin-top: 10vh;
+}
+
+.text-container h5,
+.text-container p {
+  margin: 0;
+  color: rgb(0, 0, 0);
+  margin-bottom: -41.58vh;
+  font-size: 3vw;
+  position: absolute;
+  
+  left: 2vw;
+ 
+}
+
+
+
+/*Tribute Games*/
+
+
+
+.Tribute-games {
+  padding: 4vh 2vw;
+  color: #fff;
+}
+
+.Tribute-games h3 {
+  text-align: center;
+  margin-bottom: 2vh;
+  font-size: 4vw;
+}
+
+.Tribute-games ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Tribute-games li {
+  margin-top: 1vh;
+  width: calc(33.33% - 2vw);
+}
+
+.Tribute-games li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.Tribute-games li h5 {
+  margin-bottom: 0;
+  font-size: 3vw;
+  position: absolute;
+  bottom: 0;
+  left: 2vw;
+  transform: translateY(19.4vw) translateX(1vw);
+}
+
+.Tribute-games li p {
+  background-color: #f1f1f1;
+  font-size: 2vw;
+  padding: 2vh;
+}
+
+.image-container {
+  position: relative;
+}
+
+.cover-image {
+  position: absolute;
+  top: 27%;
+  left: 4.5%;
+  z-index: 1;
+  width: 91%;
+  display: flex;
+  height: auto;
+}
+
+.cover-static {
+  position: absolute;
+  top: 27%;
+  left: 4.5%;
+  z-index: 1;
+  width: 95%;
+  display: flex;
+  height: auto;
+}
+
+.tv-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+}
+
+
+.text-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 10px;
+  z-index: 3;
+}
+
+/*.text-container
+{
+  background-color: white;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 7.5vh;
+  z-index: 3;
+}*/
+
+
+  
+
+
+  
+
+.button {
+  background-color: #c79714;
+  border: none;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1vw;
+  font-weight: bold;
+  padding: .5vw 1vw;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+  transform: translateY(22.5vw) translateX(1vw);
+}
+
+@media (max-width: 128px) {
+  .button {
+    transform: translateY(30vw) translateX(1vw);
+  }
+}
+
+
+
+
+
+
+
+.button:hover {
+  background-color: #916e10;
+  cursor: pointer;
+}
+
+footer {
+  background-color: rgba(0,0,0,0.3);
+}
+
+footer p {
+  color: white;
+}
+
+
+
+
+
+/*
+
+.image-container {
+  position: relative;
+
+}
+
+.cover-image,
+.tv-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+ 
+
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+
+
+.featured-games, .tribute-games {
+
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+*/
+
+
+
+.all-games {
+  padding: 4vh 2vw;
+  color: #fff;
+}
+
+.all-games h3 {
+  text-align: center;
+  margin-bottom: 2vh;
+  font-size: 4vw;
+}
+
+.all-games ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.all-games li {
+  margin-top: 1vh;
+  width: calc(33.33% - 2vw);
+}
+
+.all-games li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.all-games li h5 {
+  margin-bottom: 0;
+  font-size: 3vw;
+  position: absolute;
+  bottom: 0;
+  left: 2vw;
+  transform: translateY(19.4vw) translateX(1vw);
+}
+
+.all-games li p {
+  background-color: #f1f1f1;
+  font-size: 2vw;
+  padding: 2vh;
+}
+
+
+
+
+
+
+
+
+.description-box {
+  background-color: rgb(20, 20, 20);
+  border-radius: 1vw;
+  box-shadow: 0vw 2vw 5vw rgba(0, 0, 0, 0.3);
+  padding: 4vw;
+  z-index: 1;
+  width:auto;
+  max-width: 70vw; /* sets the maximum width*/
+  margin: 0 auto; /* center the box horizontally */
+}
+
+
+
+
+
+
+
+
+#carousel .image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: opacity 1s ease-in-out;
+}
+
+#carousel .fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#carousel .active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+
+
+
+
+
+
+body {
+  margin-bottom: -5rem; /* or any other value you prefer */
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+
