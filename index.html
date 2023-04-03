@@ -1,195 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tsar-Dev Home</title>
-    <link rel="icon" href="Main/images/tsarLogo.png" type="image/png">
 
-    <script type="text/javascript" src="Main/scripts/index.js"></script>
-    <link rel=stylesheet href="Main/index.css" type="text/css" />
-    <meta name="google-site-verification" content="L26aS2WVFYzd-qJPusW-5cuUba2_6SZXx_c199okr50" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tsar Dev Collective</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="source.js"> </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta name="google-site-verification" content="L26aS2WVFYzd-qJPusW-5cuUba2_6SZXx_c199okr50" />
+
+
 </head>
-
 <body>
-    <div id="slate"></div>
-    <div id="mainBack">
-        <div id="LogoBack">
-            <img id="TsarLogo" src="Main/images/TsarLogoModern.png" type="image/png">
+    <header>
+        <h1 style="font-size: 1.7vw;">Tsar Dev Collective</h1>
+        <nav>
+          <ul>
+            <li><a style="font-size: 1vw;" href="#">Home</a></li>
+            <li><a style="font-size: 1vw;" href="/games/">Games</a></li>
+            <li><a style="font-size: 1vw;" href="/About Us/">About Us</a></li>
+            <li><a style="font-size: 1vw;" href="https://nihnyx.com/">Nihnyx</a></li>
+            <li><a style="font-size: 1vw;" href="https://nihnyx.com/pages/merchandise">Merchandise</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+  <main>
+    <section class="hero">
+    </section>
+
+<section class="featured-games">
+  <center>
+    <h1 style="font-size: 2vw;">Featured Games</h1>
+  </center>
+  <br>
+  <br>
+  <ul>
+    <li>
+      <div class="image-container">
+        <img src="/Images/ItchIO_Cover3.png" alt="Game Image" class="cover-image">
+        <img src="/Images/Tsar-Dev-CRT.png" alt="TV" class="tv-image">
+        <div class="text-container">
+          <h5 style="font-size: 1.2vw;">Magister Ludi</h5> <!--<h5 style="font-size: 1.2vw;  transform: translateY(18.2vw) translateX(5.5vw);">Ludi</h5>-->
+          <br>
+          <a href="https://tsar-dev-collective.itch.io/magister-ludi" class="button"> Play Now</a>
         </div>
+        <!--<div style="height: 30vh; position: relative;"></div>-->
+      </div>
+    </li>
 
-        <div id="mainText">
-            <p class="Title">Tsar-Dev-Collective</p>
-
-            <p> </br></br></p>
-
-            <div style="left:0%; top: 0%; width: 100%; height: 2%;">
-                <p class="heading">Published Works:</p>
-            </div>
-
-            <div style="left:0%; top: 0%; width: 100%; height: 11.5%;">
-            <p class="heading">Active Projects:</p>
-                <div class="projectLink" style="margin-left: 0%; height: auto; margin-top: 0%;" onclick="window.location.href ='ELEC/index.html'" onmouseover="reveal('ELEC')" onmouseout="hide('ELEC')">
-                    <img id="projectImage" style="left: 0%; top: 0%;" src="Main/images/ELECRidersFlat.png"> 
-                    <div class="projectBack" id="ELEC" style="margin-top: -75%;">
-                        <p class="heading"></br></br>ELEC</p>
-                    </div>
-                </div>
-                <p> </br></br></br></br></br></br></p>
-            </div>
-
-            <div style="left:0%; margin-top: 10%; width: 100%; height: 15.5%;">
-                <p class="heading">Classics:</p>
-                    <div class="projectLink" style="height: auto; margin-top: 0%; margin-left: 0%;" onclick="window.location.href ='https:\/\/tonyroux.github.io/projects/pong2/'" onmouseover="reveal('Pong')" onmouseout="hide('Pong')">
-                        <img id="projectImage" style="left: 0%; top: 0%;" src="Main/images/Pong.png"> 
-                        <div class="projectBack" id="Pong" style="margin-top: -75%;">
-                            <p class="heading"></br></br></br></br>Pong</p>
-                        </div>
-                    </div>
-                    <div class="projectLink" style="height: auto; margin-top: 0%; margin-left: 0%;" onclick="window.location.href ='https:\/\/tonyroux.github.io/projects/snake/'" onmouseover="reveal('Snake')" onmouseout="hide('Snake')">
-                        <img id="projectImage" style="left: 0%; top: 0%;" src="Main/images/Snake.png"> 
-                        <div class="projectBack" id="Snake" style="margin-top: -75%;">
-                            <p class="heading"></br></br></br></br>Snake</p>
-                        </div>
-                    </div>
-                    <div class="projectLink" style="margin-left: 0%; height: auto; margin-top: 0%;" onclick="window.location.href ='https:\/\/tonyroux.github.io/projects/spiteTron/'" onmouseover="reveal('Tron')" onmouseout="hide('Tron')">
-                        <img id="projectImage" style="left: 0%; top: 0%;" src="Main/images/Circuit.png"> 
-                        <div class="projectBack" id="Tron" style="margin-top: -75%;">
-                            <p class="heading"></br></br></br></br>Circuit Cycles</p>
-                        </div>
-                    </div>
-
-                <p style="margin-top: 5%; position: static;">*each of these games have no monetization nor ads, and are not of my own design, just my own code and simple graphics</p>
-            </div>
-
-            <div style="left:0%; margin-top: 10%; width: 100%; height: 12%;">
-                <p class="heading">Abandoned Works:</p>
-                <div class="projectLink" style="margin-left: 0%; height: auto; margin-top: 0%;" onclick="window.location.href ='https:\/\/t0nyroux.github.io/'" onmouseover="reveal('Magister')" onmouseout="hide('Magister')">
-                    <img id="projectImage" style="left: 0%; top: 0%;" src="Main/images/Magister.png">
-                    <div class="projectBack" id="Magister">
-                        <p class="heading"><br></br></br></br>Magister Ludi</p>
-                    </div>
-                </div>
-                <div class="projectLink" style="margin-left: 0%; height: auto; margin-top: 0%;" onclick="window.location.href ='https:\/\/solarisschema.github.io/'" onmouseover="reveal('Solaris')" onmouseout="hide('Solaris')">
-                    <img id="projectImage" style="left: 0%; top: 0%;" src="Main/images/Solaris.png"> 
-                    <div class="projectBack" id="Solaris">
-                        <p class="heading"><br></br></br></br>Solaris Schema</p>
-                    </div>
-                </div>
-                <div class="projectLink" style="margin-left: 0%; height: auto; margin-top: 0%;" onclick="window.location.href ='https:\/\/wardenclyffegame.github.io/'" onmouseover="reveal('Warden')" onmouseout="hide('Warden')">
-                    <img id="projectImage" style="left: 0%; top: 0%;" src="Main/images/Wardenclyffe.png"> 
-                    <div class="projectBack" id="Warden">
-                        <p class="heading"><br></br></br></br>Wardenclyffe</p>
-                    </div>
-                </div>
-            </div>
-            
-            <p> </br></br></br></p>
-
-            <p class="Title">_______________________</p>
-
-            <p></br></br></p>
-
-            <p class="heading">Who Are We?</p>
-            <p id="story">Tsar-Dev is a small group of people who, above all else, just want to make things that they can share with others.
-            </br></br>
-            The Group was created merely as a means of turning our hobbies into our passions and giving us a solid name to put on our work so
-            as to boost each other up with each successful project, and grow a brand for ourselves large enough that any one of our members' small ideas
-            could become a project known 'round the world in no time.
-            </br></br>
-            In the midst of the pandemic in 2020, three of us started Tsar-Dev as a name for us to work under on a project that was to be
-            entered into a programming competition. That project would be named, <a href="https://solarisschema.github.io/">"Solaris Schema"</a> and did actually win our branch of that competition.
-            </br></br>
-            Ecouraged by our success and our teacher at the time, we embarked on the next project, <a href="https://wardenclyffegame.github.io/">"Wardenclyffe"</a>. 
-            Which unfortunately never made it past the hurdles of development and remains online as a testing grounds.
-            </br></br>
-            Many of our older projects, including my own personal work that was absorbed into the name, will never see the light of day, but
-            some day soon you'll be able to see our name on games and sites bigger and better than anything we could even dream of at current.
-            </p>
+    <li>
+      <div class="image-container">
+        <img src="/Images/ELECCover.png" alt="Game Image" class="cover-image">
+        <img src="/Images/Tsar-Dev-CRT.png" alt="TV" class="tv-image">
+        <div class="text-container">
+          <h5 style="font-size: 1.2vw;">Elec</h5>
+          <br>
+          <a href="/Elec/" class="button"> Play Now</a>
         </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="image-container">
+        <img src="/Images/static.gif" alt="Game Image" class="cover-static">
+        <img src="/Images/Tsar-Dev-CRT.png" alt="TV" class="tv-image">
+        <div class="text-container">
+          <h5 style="font-size: 1.2vw;"></h5>
+          <br>
+          <a href="#" class="button"> Play Now</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<div style="height: 90vh;"></div>
+
+
+
+<section class="Tribute-games">
+  <center>
+    <h1 style="font-size: 2vw;">Tribute Games</h1>
+  </center>
+  <br>
+  <br>
+  <ul>
+    <li>
+      <div class="image-container">
+        <img src="/Images/SnakeCover.png" alt="Game Image" class="cover-image">
+        <img src="/Images/Tsar-Dev-CRT.png" alt="TV" class="tv-image">
+        <div class="text-container">
+          <h5 style="font-size: 1.2vw;">Snake</h5>
+          <br>
+          <a href="https://tonyroux.github.io/projects/snake/" class="button"> Play Now</a>
+        </div>
+        
+      </div>
+    </li>
+
+    <li>
+      <div class="image-container">
+        <img src="/Images/LightCyclesCover.png" alt="Game Image" class="cover-image">
+        <img src="/Images/Tsar-Dev-CRT.png" alt="TV" class="tv-image">
+        <div class="text-container">
+          <h5 style="font-size: 1.2vw;">LightCycles</h5>
+          <br>
+          <a href="https://tonyroux.github.io/projects/spiteTron/" class="button"> Play Now</a>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="image-container">
+        <img src="/Images/PongCover.png" alt="Game Image" class="cover-image">
+        <img src="/Images/Tsar-Dev-CRT.png" alt="TV" class="tv-image">
+        <div class="text-container">
+          <h5 style="font-size: 1.2vw;">Pong</h5>
+          <br>
+          <a href="https://tonyroux.github.io/projects/pong2/" class="button"> Play Now</a>
+         
+        </div>
+      </div>
+    
+    </li>
+  </ul>
+</section>
+<div style="height: 90vh;"></div>
+
+<!--
+    <section class="about-us">
+      <h3>About Us</h3>
+      <p>Ą̸̛̞̰̤̜͎̺̯̺̼̬͔̥͙̎̃̋͝A̵̢͍͚͚͑͒A̴̛͕̮̼͚͇͈̅́̑̒̀̓̀̄̈́͌͊̎̚ͅÁ̸̡̬̮̖̱̙͍̗̲̣̟̥̍̂̈́̈́̎́̿̽͊͒͘͠Ã̴̢͍̝̞͚͇̹̪̮͍͙̝̠͓̙̄̐̅̔̔͒̎͑̚A̶̲͘ͅA̵̞̱̗̘̓̉͂͘͝Ḁ̶̛͇̼̻̤̯̠̦̱̹͖̔͂̋̉̂̈́͐̔Å̴̡̼̤̟̣̹̘̦̲̥̑̏̓̀͊̌̋̏͜A̵̧͍̖̣̙̞̼͖̳̅͂̑̓̌̄͗Ä̷̢̛̯̪̬̠͔̪̭̏͌͊̓̄̒͗̚̕̚Ã̶̧͕͈̘͎͔͎̥̗͊̈́̊̀́͑͆͑͌̄̚͝͝Ą̸͈̱͖͍̙̬̐̅̑͘͠Ą̷͙̖̮͖͎̞̄̍̃̋̅̈͝͝Ä̷̧̳͍̦̱̦̘̫͈̘̱̼̱́̀̉̽̓̀̍͑̄̒͘͠A̴̡̡̨͕͙̤̯̻͉̝̠̪̓̃̇̈́̾̎ͅÄ̵̢̬̺̯̻͇̃̅̇͆͆͘A̴̲̝̹͖͚̫̙̤͎͈͎̠̣̟̼͘Ã̶̗̀̓͒̆́̈́̄̀͠Ą̷̰̱̥͚̦̖̞͍̦͔͈͚̀͜ͅA̵̮͓̣̝̪̣̜̤̲̻͇̟͒͑̋͜Ą̷̧̖͈̃̎̾͆̅̈́̾̾͛̊͘̚͝͝Ą̸̛̞̰̤̜͎̺̯̺̼̬͔̥͙̎̃̋͝A̵̢͍͚͚͑͒A̴̛͕̮̼͚͇͈̅́̑̒̀̓̀̄̈́͌͊̎̚ͅÁ̸̡̬̮̖̱̙͍̗̲̣̟̥̍̂̈́̈́̎́̿̽͊͒͘͠Ã̴̢͍̝̞͚͇̹̪̮͍͙̝̠͓̙̄̐̅̔̔͒̎͑̚A̶̲͘ͅA̵̞̱̗̘̓̉͂͘͝Ḁ̶̛͇̼̻̤̯̠̦̱̹͖̔͂̋̉̂̈́͐̔Å̴̡̼̤̟̣̹̘̦̲̥̑̏̓̀͊̌̋̏͜A̵̧͍̖̣̙̞̼͖̳̅͂̑̓̌̄͗Ä̷̢̛̯̪̬̠͔̪̭̏͌͊̓̄̒͗̚̕̚Ã̶̧͕͈̘͎͔͎̥̗͊̈́̊̀́͑͆͑͌̄̚͝͝Ą̸͈̱͖͍̙̬̐̅̑͘͠Ą̷͙̖̮͖͎̞̄̍̃̋̅̈͝͝Ä̷̧̳͍̦̱̦̘̫͈̘̱̼̱́̀̉̽̓̀̍͑̄̒͘͠A̴̡̡̨͕͙̤̯̻͉̝̠̪̓̃̇̈́̾̎ͅÄ̵̢̬̺̯̻͇̃̅̇͆͆͘A̴̲̝̹͖͚̫̙̤͎͈͎̠̣̟̼͘Ã̶̗̀̓͒̆́̈́̄̀͠Ą̷̰̱̥͚̦̖̞͍̦͔͈͚̀͜ͅA̵̮͓̣̝̪̣̜̤̲̻͇̟͒͑̋͜Ą̷̧̖͈̃̎̾͆̅̈́̾̾͛̊͘̚͝͝Ą̸̛̞̰̤̜͎̺̯̺̼̬͔̥͙̎̃̋͝A̵̢͍͚͚͑͒A̴̛͕̮̼͚͇͈̅́̑̒̀̓̀̄̈́͌͊̎̚ͅÁ̸̡̬̮̖̱̙͍̗̲̣̟̥̍̂̈́̈́̎́̿̽͊͒͘͠Ã̴̢͍̝̞͚͇̹̪̮͍͙̝̠͓̙̄̐̅̔̔͒̎͑̚A̶̲͘ͅA̵̞̱̗̘̓̉͂͘͝Ḁ̶̛͇̼̻̤̯̠̦̱̹͖̔͂̋̉̂̈́͐̔Å̴̡̼̤̟̣̹̘̦̲̥̑̏̓̀͊̌̋̏͜A̵̧͍̖̣̙̞̼͖̳̅͂̑̓̌̄͗Ä̷̢̛̯̪̬̠͔̪̭̏͌͊̓̄̒͗̚̕̚Ã̶̧͕͈̘͎͔͎̥̗͊̈́̊̀́͑͆͑͌̄̚͝͝Ą̸͈̱͖͍̙̬̐̅̑͘͠Ą̷͙̖̮͖͎̞̄̍̃̋̅̈͝͝Ä̷̧̳͍̦̱̦̘̫͈̘̱̼̱́̀̉̽̓̀̍͑̄̒͘͠A̴̡̡̨͕͙̤̯̻͉̝̠̪̓̃̇̈́̾̎ͅÄ̵̢̬̺̯̻͇̃̅̇͆͆͘A̴̲̝̹͖͚̫̙̤͎͈͎̠̣̟̼͘Ã̶̗̀̓͒̆́̈́̄̀͠Ą̷̰̱̥͚̦̖̞͍̦͔͈͚̀͜ͅA̵̮͓̣̝̪̣̜̤̲̻͇̟͒͑̋͜Ą̷̧̖͈̃̎̾͆̅̈́̾̾͛̊͘̚͝͝Ą̸̛̞̰̤̜͎̺̯̺̼̬͔̥͙̎̃̋͝A̵̢͍͚͚͑͒A̴̛͕̮̼͚͇͈̅́̑̒̀̓̀̄̈́͌͊̎̚ͅÁ̸̡̬̮̖̱̙͍̗̲̣̟̥̍̂̈́̈́̎́̿̽͊͒͘͠Ã̴̢͍̝̞͚͇̹̪̮͍͙̝̠͓̙̄̐̅̔̔͒̎͑̚A̶̲͘ͅA̵̞̱̗̘̓̉͂͘͝Ḁ̶̛͇̼̻̤̯̠̦̱̹͖̔͂̋̉̂̈́͐̔Å̴̡̼̤̟̣̹̘̦̲̥̑̏̓̀͊̌̋̏͜A̵̧͍̖̣̙̞̼͖̳̅͂̑̓̌̄͗Ä̷̢̛̯̪̬̠͔̪̭̏͌͊̓̄̒͗̚̕̚Ã̶̧͕͈̘͎͔͎̥̗͊̈́̊̀́͑͆͑͌̄̚͝͝Ą̸͈̱͖͍̙̬̐̅̑͘͠Ą̷͙̖̮͖͎̞̄̍̃̋̅̈͝͝Ä̷̧̳͍̦̱̦̘̫͈̘̱̼̱́̀̉̽̓̀̍͑̄̒͘͠A̴̡̡̨͕͙̤̯̻͉̝̠̪̓̃̇̈́̾̎ͅÄ̵̢̬̺̯̻͇̃̅̇͆͆͘A̴̲̝̹͖͚̫̙̤͎͈͎̠̣̟̼͘Ã̶̗̀̓͒̆́̈́̄̀͠Ą̷̰̱̥͚̦̖̞͍̦͔͈͚̀͜ͅA̵̮͓̣̝̪̣̜̤̲̻͇̟͒͑̋͜Ą̷̧̖͈̃̎̾͆̅̈́̾̾͛̊͘̚͝͝ </p>
+    </section>
+
+-->
+  </main>
+
+  <footer>
+    <div style="text-align:center;">
+      <a href="https:\/\/www.facebook.com/Tsar-Dev-Collective-101306862251793" style="display:inline-block;margin-right:2vw;"><img src="/Images/facebook.png" alt="Facebook" style="width:7vw;height:7vw;"></a>
+      <a href="https:\/\/twitter.com/Tsar_Dev" style="display:inline-block;margin-right:2vw;"><img src="/Images/twitter.png" alt="Twitter" style="width:6vw;height:6vw;"></a>
+      <a href="https:\/\/www.instagram.com/tsardev.collective/" style="display:inline-block;margin-right:2vw;"><img src="/Images/instagram.png" alt="Instagram" style="width:6vw;height:6vw;"></a>
+      <a href="https:\/\/www.youtube.com/channel/UC7mz2vxRzvRKoVmQvdKH_7Q" style="display:inline-block;margin-right:2vw;"><img src="/Images/youtube.png" alt="Youtube" style="width:6vw;height:6vw;"></a>
     </div>
-
-    <div id="contactBack">
-        <div>
-        <div id="gameBlock" style="left: 10%; top: 5%; width: 10%; position:absolute;">
-            <p style="color: rgb(146, 146, 146);">
-                Games:<br>
-                <a href="https://www.kickstarter.com/projects/1421609555/elec" class="bottomLink">ELEC</a><br>
-                <a href="https://wardenclyffegame.github.io/" class="bottomLink">Wardenclyffe</a><br>
-                <a href="https://t0nyroux.github.io/" class="bottomLink">Magister Ludi</a><br>
-                <br>
-                <a href="https://tonyroux.github.io/projects/pong2/" class="bottomLink">Pong</a><br>
-                <a href="https://tonyroux.github.io/projects/snake/" class="bottomLink">Snake</a><br>
-                <a href="https://tonyroux.github.io/projects/spiteTron/" class="bottomLink">Circuit Cycles</a><br>
-                <br>
-                Contact Us:<br>
-                TsarDevCollective@gmail.com
-            </p>
-        </div>
-        <div id="linkBlock" style="left: 25%; top: 5%; z-index: -1; position: absolute;">
-            <p style="color: rgb(146,146,146);">
-                Pages:<br>
-                <a href="" class="bottomLink">Updates</a><br>
-                <a href="" class="bottomLink">Contact Page</a><br>
-            </p>
-        </div>
-        <div id="mediaHandles">
-            <img class="bottomLink" src="Main/images/youtube.png" onclick="window.location.href ='https:\/\/www.youtube.com/channel/UC7mz2vxRzvRKoVmQvdKH_7Q'" style="position: absolute; left: 50%; top: 35%; width: 7%; height: auto;">
-            <img class="bottomLink" src="Main/images/twitter.png" onclick="window.location.href ='https:\/\/twitter.com/Tsar_Dev'" style="position: absolute; left: 60%; top: 30%; height: auto; width: 8%;">
-            <img class="bottomLink" src="Main/images/facebook.png" onclick="window.location.href ='https:\/\/www.facebook.com/Tsar-Dev-Collective-101306862251793'" style="position: absolute; left: 68%; top: 25%; height: auto; width: 10%; z-index: 1;">
-            <img class="bottomLink" src="Main/images/instagram.png" onclick="window.location.href ='https:\/\/www.instagram.com/tsardev.collective/'" style="position: absolute; left: 78%; top: 33%; height: auto; width: 6%; z-index: 1;">
-
-            <img class="bottomLink" src="Main/images/arrow.png" onclick="window.location.href =''" style="position: absolute; right: 2%; top: 10%; height: 10%; width: auto; z-index: 1;">
-        </div>
-        </div>
+    <div style="text-align:center;margin-top:2vw;">
+      <p style="font-size:1.2vw;">&copy; 2023 Tsar-Dev-Collective, fungineering LLC</p>
     </div>
+  </footer>
 
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
 
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "101306862251793");
-      chatbox.setAttribute("attribution", "biz_inbox");
-
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v11.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-
+  <style>
+    
+    .social-links a {
+      display: inline-block;
+   
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    
+    .social-links a:hover {
+      background-color: #666;
+    }
+  </style>
 </body>
-
-<script>
-    function reveal(id) {
-        document.getElementById(id).style.zIndex = "3";
-    }
-
-    function hide(id) {
-        document.getElementById(id).style.zIndex = "-1";
-    }
-
-    console.log(window.innerWidth);
-
-    if (window.innerWidth <= 1080) {
-        window.location.href = "Main/Mobile/mobile.html";
-        console.log("mobile user");
-    }
-</script>
-
 </html>

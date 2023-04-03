@@ -1,0 +1,57 @@
+a:hover {
+    color:blue;
+}
+
+@font-face {
+    font-family: 'arcadeclassicregular';
+    src: url('/site/arcadeText/arcadeclassic-webfont.woff2') format('woff2'),
+         url('/site/arcadeText/arcadeclassic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'arcadeclassicregular';
+    word-spacing: 10px;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+    background: linear-gradient(white, white, white, black, black);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-y: hidden;
+}
+
+a:hover {
+    color: dodgerblue;
+    font-style: italic;
+}
+
+.link {
+    color: black;
+}
+#milutin {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    bottom: 1%;
+    left: 1%;
+}
+
+#solaris {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    bottom: 1%;
+    left: 13%;
+}
+
+#members {
+    position: absolute;
+    width: fit-content;
+    top: 0%;
+    right: 10%;
+}

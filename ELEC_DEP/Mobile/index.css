@@ -1,0 +1,115 @@
+body {
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'ELECFont';
+    src: url('../font/ELECFont.tff') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#bg {
+    background-image: url("../images/bg.png");
+    height: 125%;
+    width: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+}
+
+#bgOverlay {
+    background: rgba(0, 0, 0, 0.75);
+    height: 125%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+#mainBack {
+    height: 220%;
+    width: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+
+    display: flexbox;
+
+    background: linear-gradient(180deg, rgb(66, 88, 92),rgb(32, 45, 51));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#logo {
+    width: 50%;
+    height: 14vh;
+    /*position: absolute;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+#retailContainer {
+    background-image: linear-gradient(180deg, rgb(31, 27, 44), rgb(0, 0, 0));
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.retailLink {
+    width: 24.5%;
+    height: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+    /*position: absolute;*/
+    position: static;
+    /*z-index: 1;*/
+    /*display:inline-block;*/
+    background-image: linear-gradient(180deg, rgb(188, 208, 214), rgb(255, 255, 255), rgb(188, 208, 214), rgb(188, 208, 214), rgb(98, 126, 150));
+}
+
+.retailLink:hover {
+    background-image: linear-gradient(180deg, rgb(142, 157, 161), rgb(179, 179, 179), rgb(142, 157, 161), rgb(142, 157, 161), rgb(55, 70, 83));
+}
+
+#retailImage {
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+#carouselBlock {
+    width: 90%;
+    height: 20%;
+}
+
+h1 {
+    font-family: "ELECFont";
+    color: white;
+
+    font-size: 3.5vw;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(250, 250, 250);
+    padding-left: 1%;
+    padding-right: 1%;
+
+    font-size: 2.5vw;
+}
